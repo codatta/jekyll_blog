@@ -5,6 +5,7 @@ date:   2025-11-21 11:00:00 +0800
 categories: [Blockchain]
 author: codatta_team
 status: research
+excerpt: "Data is the new oil, but provenance is key. We discuss how blockchain technology provides an immutable trust layer for AI training data, ensuring integrity, preventing bias, and enabling fair compensation for contributors."
 image: /assets/images/blockchain_lineage.png
 ---
 

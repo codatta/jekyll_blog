@@ -5,6 +5,7 @@ date:   2025-11-21 09:00:00 +0800
 categories: [AI]
 author: alice_smith
 status: research
+excerpt: "Discover why generalist LLMs often fail in specialized fields and how domain-specific fine-tuning bridges the gap. We explore the importance of high-quality, expert-verified datasets in creating AI models that understand not just jargon, but context."
 image: /assets/images/ai_fine_tuning.png
 ---
 

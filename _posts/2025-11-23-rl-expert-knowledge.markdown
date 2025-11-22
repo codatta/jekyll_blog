@@ -5,6 +5,7 @@ date:   2025-11-21 10:00:00 +0800
 categories: [AI]
 author: alice_smith
 status: research
+excerpt: "Explore how Reinforcement Learning with Human Feedback (RLHF) is evolving by integrating real-world expert knowledge. Learn how expert-in-the-loop systems accelerate model convergence and ensure safety in complex AI applications."
 image: /assets/images/ai_rl_expert.png
 ---
 
