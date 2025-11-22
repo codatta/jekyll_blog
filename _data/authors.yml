@@ -1,0 +1,14 @@
+codatta_team:
+  name: Codatta Team
+  bio: "The team behind Codatta, the knowledge layer for AI."
+  avatar: /assets/images/codatta-logo.png
+  twitter: codatta_io
+  github: codatta
+  linkedin: codetta-io
+
+alice_smith:
+  name: Alice Smith
+  bio: "Blockchain Researcher & AI Enthusiast."
+  avatar: /assets/images/alice.jpg
+  twitter: alicesmith
+  github: alicesmith
