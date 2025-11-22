@@ -1,0 +1,32 @@
+title: Codatta Blog
+email: support@codatta.io
+description: >-
+  Codatta turns expert human knowledge into blockchain-based data assets. Contribute data, earn royalties, and power real-world AI systems.
+baseurl: ""
+url: "https://blog.codatta.io"
+twitter_username: codatta_io
+github_username: codatta
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "codatta_team"
+      status: "official"
+
+# Social Links (used in footer/author)
+social:
+  twitter: https://x.com/codatta_io
+  linkedin: https://www.linkedin.com/company/codetta-io
+  telegram: https://t.me/codatta_io
+  discord: https://discord.gg/YCESVmHEYv
+  medium: https://codatta.medium.com
