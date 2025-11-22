@@ -1,6 +1,6 @@
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
   <div class="max-w-[1000px] mx-auto px-6">
-    <div class="flex justify-between items-center h-24">
+    <div class="flex justify-between items-center h-20 md:h-24">
       
       <!-- Logo -->
       <a class="flex items-center group z-50 relative" href="{{ "/" | relative_url }}">
@@ -14,9 +14,9 @@
 
       <!-- Desktop Nav -->
       {% if page.layout == 'post' %}
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="flex items-center gap-8">
         <a href="{{ '/' | relative_url }}" 
-           class="group text-[11px] font-mono uppercase tracking-widest !text-gray-400 hover:!text-black flex items-center gap-2 hover:!no-underline transition-colors">
+           class="group text-[11px] font-mono uppercase tracking-widest !text-gray-400 hover:!text-black md:flex items-center gap-2 hover:!no-underline transition-colors hidden">
            <span class="transition-transform duration-300 group-hover:-translate-x-1">&lt;</span> Back to Overview
          </a>
      </nav>
@@ -66,21 +66,28 @@
   </div>
   
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden flex-col justify-center px-6 animate-in fade-in slide-in-from-bottom-4">
-     <div class="flex flex-col space-y-6">
-        <a href="{{ '/' | relative_url }}" class="mobile-nav-link text-3xl font-serif font-medium italic text-left text-gray-300" data-category="all">All</a>
-        
-        {% for cat in raw_cats %}
-          {% if cat != "Other" %}
-            <a href="{{ '/' | relative_url }}#{{ cat | slugify }}" 
-               class="mobile-nav-link text-3xl font-serif font-medium italic text-left text-gray-300" 
-               data-category="{{ cat | slugify }}">
-                {{ cat }}
-            </a>
-          {% endif %}
-        {% endfor %}
-        
-        <a href="{{ '/' | relative_url }}#other" class="mobile-nav-link text-3xl font-serif font-medium italic text-left text-gray-300" data-category="other">Others</a>
+  <div id="mobile-menu" class="fixed inset-0 top-[80px] z-40 hidden bg-black/25 backdrop-blur-[2px]">
+     <!-- Menu Content -->
+     <div class="bg-white w-full py-8 px-6 border-t border-gray-100 shadow-xl flex flex-col space-y-6 animate-in slide-in-from-top-2 fade-in duration-200">
+        {% if page.layout == 'post' %}
+          <a href="{{ '/' | relative_url }}" class="mobile-nav-link text-xl font-serif font-medium italic text-left text-gray-400 flex items-center gap-2 hover:text-black transition-colors">
+            <span>&lt;</span> Back to Overview
+          </a>
+        {% else %}
+          <a href="{{ '/' | relative_url }}" class="mobile-nav-link text-2xl font-serif font-medium italic text-left text-gray-300 hover:text-black transition-colors" data-category="all">All</a>
+          
+          {% for cat in raw_cats %}
+            {% if cat != "Other" %}
+              <a href="{{ '/' | relative_url }}#{{ cat | slugify }}" 
+                 class="mobile-nav-link text-2xl font-serif font-medium italic text-left text-gray-300 hover:text-black transition-colors" 
+                 data-category="{{ cat | slugify }}">
+                  {{ cat }}
+              </a>
+            {% endif %}
+          {% endfor %}
+          
+          <a href="{{ '/' | relative_url }}#other" class="mobile-nav-link text-2xl font-serif font-medium italic text-left text-gray-300 hover:text-black transition-colors" data-category="other">Others</a>
+        {% endif %}
      </div>
   </div>
 
@@ -98,13 +105,11 @@
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
                 mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
                 iconMenu.classList.add('hidden');
                 iconClose.classList.remove('hidden');
             } else {
                 mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
                 document.body.style.overflow = '';
                 iconMenu.classList.remove('hidden');
                 iconClose.classList.add('hidden');
@@ -115,11 +120,20 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
                 document.body.style.overflow = '';
                 iconMenu.classList.remove('hidden');
                 iconClose.classList.add('hidden');
             });
+        });
+
+        // Close on backdrop click
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
         });
 
         // Active State Logic
@@ -133,8 +147,11 @@
                 link.classList.add('!text-gray-400');
             });
             mobileLinks.forEach(link => {
-                link.classList.remove('!text-black');
-                link.classList.add('!text-gray-300');
+                // Reset mobile links to default black, remove active indicator
+                link.classList.remove('underline', 'decoration-2', 'underline-offset-4');
+                // Ensure they are black (though HTML class sets it, this cleans up previous JS states)
+                link.classList.remove('text-gray-300'); 
+                link.classList.add('text-black');
             });
 
             // Set active
@@ -146,8 +163,7 @@
 
             const activeMobile = document.querySelector(`.mobile-nav-link[data-category="${category}"]`);
             if (activeMobile) {
-                activeMobile.classList.remove('text-gray-300');
-                activeMobile.classList.add('text-black');
+                activeMobile.classList.add('underline', 'decoration-2', 'underline-offset-4');
             }
         }
 

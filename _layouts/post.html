@@ -5,10 +5,10 @@ layout: default
   
   <article class="pb-32 h-entry" itemscope itemtype="http://schema.org/BlogPosting">
     <!-- Post Header -->
-    <header class="max-w-[800px] mx-auto px-6 pt-16 lg:pt-32 pb-16 text-center">
+    <header class="max-w-[800px] mx-auto px-6 pt-12 md:pt-32 pb-12 md:pb-16 text-center">
         
         <!-- Meta Data -->
-        <div class="flex items-center justify-center gap-3 mb-8 text-xs font-mono uppercase tracking-[0.15em] text-gray-500">
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-6 md:mb-8 text-[10px] md:text-xs font-mono uppercase tracking-[0.15em] text-gray-500">
             <span class="text-black font-medium">
               {% if page.categories.size > 0 %}
                 {{ page.categories | first }}
@@ -27,7 +27,7 @@ layout: default
         </div>
         
         <!-- Title -->
-        <h1 class="text-5xl md:text-7xl lg:text-[4.5rem] font-serif font-medium text-black leading-[1.1] tracking-tight mb-10 p-name" itemprop="name headline">
+        <h1 class="text-4xl md:text-7xl lg:text-[4.5rem] font-serif font-medium text-black leading-[1.1] tracking-tight mb-8 md:mb-10 p-name" itemprop="name headline">
             {{ page.title | escape }}
         </h1>
 
@@ -72,28 +72,28 @@ layout: default
             prose prose-lg prose-stone max-w-none
             
             /* Headings */
-            [&_h2]:text-[2rem] [&_h2]:leading-tight [&_h2]:tracking-tight [&_h2]:text-black [&_h2]:mt-16
-            [&_h3]:text-2xl [&_h3]:mt-12 [&_h3]:font-medium [&_h3]:text-black
+            [&_h2]:text-3xl md:[&_h2]:text-[2rem] [&_h2]:leading-tight [&_h2]:tracking-tight [&_h2]:text-black [&_h2]:mt-12 md:[&_h2]:mt-16
+            [&_h3]:text-xl md:[&_h3]:text-2xl [&_h3]:mt-8 md:[&_h3]:mt-12 [&_h3]:font-medium [&_h3]:text-black
             
             /* Lead Paragraph (The Mercor/Editorial Style) */
-            [&>p:first-of-type]:text-[1.35rem] 
+            [&>p:first-of-type]:text-xl md:[&>p:first-of-type]:text-[1.35rem] 
             [&>p:first-of-type]:leading-[1.6] 
             [&>p:first-of-type]:text-gray-800 
             [&>p:first-of-type]:font-serif 
-            [&>p:first-of-type]:mb-12
+            [&>p:first-of-type]:mb-8 md:[&>p:first-of-type]:mb-12
             
             /* Standard Paragraphs */
             [&_p]:font-sans 
-            [&_p]:text-[1.125rem] 
+            [&_p]:text-base md:[&_p]:text-[1.125rem] 
             [&_p]:text-[#222] 
-            [&_p]:leading-[1.8] 
-            [&_p]:mb-8
+            [&_p]:leading-[1.7] md:[&_p]:leading-[1.8] 
+            [&_p]:mb-6 md:[&_p]:mb-8
             
             /* Blockquotes */
-            [&_blockquote]:pl-8 
+            [&_blockquote]:pl-6 md:[&_blockquote]:pl-8 
             [&_blockquote]:py-2 
-            [&_blockquote]:my-12
-            [&_blockquote]:text-2xl 
+            [&_blockquote]:my-8 md:[&_blockquote]:my-12
+            [&_blockquote]:text-xl md:[&_blockquote]:text-2xl 
             [&_blockquote]:leading-normal 
             [&_blockquote]:text-black
             
@@ -102,11 +102,11 @@ layout: default
             hover:[&_img]:grayscale-0 
             [&_img]:transition-all 
             [&_img]:duration-700
-            [&_img]:my-12 
+            [&_img]:my-8 md:[&_img]:my-12 
             [&_img]:rounded-sm
             
             /* Lists */
-            [&_li]:text-[1.125rem] 
+            [&_li]:text-base md:[&_li]:text-[1.125rem] 
             [&_li]:text-[#222] 
             [&_li]:marker:text-gray-300
          " itemprop="articleBody">
@@ -114,11 +114,11 @@ layout: default
          </div>
 
          <!-- Post Footer / Tags -->
-         <div class="mt-24 pt-12 border-t border-gray-100">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+         <div class="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-gray-100">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 md:gap-8">
                 <div class="flex gap-2 flex-wrap">
                     {% for tag in page.tags %}
-                        <span class="text-[11px] font-mono border border-gray-200 px-3 py-1.5 text-gray-500 uppercase tracking-wider hover:border-black hover:text-black transition-colors cursor-pointer rounded-full bg-gray-50">
+                        <span class="text-[10px] md:text-[11px] font-mono border border-gray-200 px-2.5 py-1 md:px-3 md:py-1.5 text-gray-500 uppercase tracking-wider hover:border-black hover:text-black transition-colors cursor-pointer rounded-full bg-gray-50">
                             {{ tag }}
                         </span>
                     {% endfor %}

@@ -35,7 +35,7 @@ layout: default
                 <div class="md:col-span-8 order-2 md:order-1 flex flex-col h-full justify-between">
                     <div>
                         <!-- Meta Data -->
-                        <div class="flex items-center gap-3 mb-4 text-[10px] font-mono uppercase tracking-widest text-gray-400">
+                        <div class="flex items-center gap-3 mb-3 md:mb-4 text-[10px] font-mono uppercase tracking-widest text-gray-400">
                             <span class="text-black font-medium">
                               {% if post.categories.size > 0 %}
                                 {{ post.categories | first }}
@@ -47,11 +47,11 @@ layout: default
                             <span>{{ post.date | date: "%b %d, %Y" }}</span>
                         </div>
 
-                        <h2 class="text-3xl md:text-[2.5rem] leading-[1.15] font-serif font-medium text-black mb-4 group-hover:text-gray-600 transition-colors">
+                        <h2 class="text-3xl md:text-[2.5rem] leading-[1.15] font-serif font-medium text-black mb-3 md:mb-4 group-hover:text-gray-600 transition-colors">
                             {{ post.title | escape }}
                         </h2>
                         
-                        <div class="text-base md:text-lg text-gray-500 leading-relaxed max-w-2xl font-sans line-clamp-2 mb-6">
+                        <div class="text-base md:text-lg text-gray-500 leading-relaxed max-w-2xl font-sans line-clamp-2 mb-4 md:mb-6">
                             {{ post.excerpt | strip_html }}
                         </div>
                     </div>
