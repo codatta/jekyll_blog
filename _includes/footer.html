@@ -1,65 +1,9 @@
-<footer class="site-footer h-card bg-white border-t border-gray-100 mt-auto">
-  <data class="u-url" href="{{ " /" | relative_url }}"></data>
 
-  <div class="max-w-[1000px] mx-auto px-6 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-      <!-- Brand & Description -->
-      <div class="md:col-span-1">
-        <h2 class="footer-heading text-lg font-bold text-gray-900 mb-4">{{ site.title | escape }}</h2>
-        <p class="text-sm text-gray-500 leading-relaxed">
-          {{ site.description | escape }}
-        </p>
-      </div>
-
-      <!-- Resources/Links -->
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Resources</h3>
-        <ul class="space-y-3 text-sm text-gray-600 pl-0 ml-0 list-none">
-          <li><a href="https://codatta.io" class="hover:text-gray-900 transition-colors">Codatta.io</a></li>
-          <li><a href="{{ "/" | relative_url }}" class="hover:text-gray-900 transition-colors">Blog Home</a></li>
-        </ul>
-      </div>
-
-      <!-- Social -->
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Social</h3>
-        <ul class="space-y-3 text-sm text-gray-600 pl-0 ml-0 list-none">
-          {%- if site.social.twitter -%}
-          <li><a href="{{ site.social.twitter }}" class="hover:text-gray-900 transition-colors">X (Twitter)</a></li>
-          {%- endif -%}
-          {%- if site.social.linkedin -%}
-          <li><a href="{{ site.social.linkedin }}" class="hover:text-gray-900 transition-colors">LinkedIn</a></li>
-          {%- endif -%}
-          {%- if site.social.github -%}
-          <li><a href="https://github.com/{{ site.social.github | remove: 'https://github.com/' }}" class="hover:text-gray-900 transition-colors">GitHub</a></li>
-          {%- endif -%}
-          {%- if site.social.medium -%}
-          <li><a href="{{ site.social.medium }}" class="hover:text-gray-900 transition-colors">Medium</a></li>
-          {%- endif -%}
-        </ul>
-      </div>
-
-      <!-- Community -->
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Community</h3>
-        <ul class="space-y-3 text-sm text-gray-600 pl-0 ml-0 list-none">
-          {%- if site.social.telegram -%}
-          <li><a href="{{ site.social.telegram }}" class="hover:text-gray-900 transition-colors">Telegram</a></li>
-          {%- endif -%}
-          {%- if site.social.discord -%}
-          <li><a href="{{ site.social.discord }}" class="hover:text-gray-900 transition-colors">Discord</a></li>
-          {%- endif -%}
-          {%- if site.email -%}
-          <li><a href="mailto:{{ site.email }}" class="hover:text-gray-900 transition-colors">Contact Us</a></li>
-          {%- endif -%}
-        </ul>
-      </div>
-    </div>
-
+  <div class="w-[1000px] mx-auto px-6 pb-12">
     <!-- Copyright -->
     <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
       <p class="text-xs text-gray-400 font-mono uppercase tracking-widest mb-4 md:mb-0">
-        &copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All rights reserved.
+        Codatta Inc., {{ 'now' | date: "%Y" }}
       </p>
       
       <div class="flex space-x-6">
@@ -67,4 +11,3 @@
       </div>
     </div>
   </div>
-</footer>

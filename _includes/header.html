@@ -13,6 +13,14 @@
       </a>
 
       <!-- Desktop Nav -->
+      {% if page.layout == 'post' %}
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="{{ '/' | relative_url }}" 
+           class="group text-[11px] font-mono uppercase tracking-widest !text-gray-400 hover:!text-black flex items-center gap-2 hover:!no-underline transition-colors">
+           <span class="transition-transform duration-300 group-hover:-translate-x-1">&lt;</span> Back to Overview
+         </a>
+     </nav>
+     {% else %}
       <nav class="hidden md:flex items-center gap-6" id="desktop-nav">
         <a href="{{ '/' | relative_url }}" 
            class="nav-link text-[11px] font-mono uppercase tracking-widest transition-colors duration-200 !text-gray-400 hover:!text-black hover:!no-underline" 
@@ -42,6 +50,7 @@
            class="nav-link text-[11px] font-mono uppercase tracking-widest transition-colors duration-200 !text-gray-400 hover:!text-black hover:!no-underline"
            data-category="other">Others</a>
       </nav>
+      {% endif %}
 
       <!-- Mobile Menu Toggle -->
       <div class="md:hidden z-50">

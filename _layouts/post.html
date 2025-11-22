@@ -1,54 +1,137 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-        <p class="post-meta">
+<div class="animate-in fade-in slide-in-from-bottom-8 duration-700">
+  
+  <article class="pb-32 h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <!-- Post Header -->
+    <header class="max-w-[800px] mx-auto px-6 pt-16 lg:pt-32 pb-16 text-center">
+        
+        <!-- Meta Data -->
+        <div class="flex items-center justify-center gap-3 mb-8 text-xs font-mono uppercase tracking-[0.15em] text-gray-500">
+            <span class="text-black font-medium">
+              {% if page.categories.size > 0 %}
+                {{ page.categories | first }}
+              {% else %}
+                Other
+              {% endif %}
+            </span>
+            <span class="text-gray-300">|</span>
             <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                {{ page.date | date: date_format }}
+                {{ page.date | date: "%b %d, %Y" }}
             </time>
-            {%- if page.author -%}
-            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-                    itemprop="name">{{ page.author }}</span></span>
-            {%- endif -%}
-            {%- if page.categories.size > 0 -%}
-            • Categories: {{ page.categories | join: ", " }}
-            {%- endif -%}
-            {%- if page.status -%}
-            • Status: <span class="post-status status-{{ page.status }}">{{ page.status | capitalize }}</span>
-            {%- endif -%}
-        </p>
-    </header>
+            <span class="text-gray-300">|</span>
+            {% assign words = content | number_of_words %}
+            {% assign read_time = words | divided_by: 180 | plus: 1 %}
+            <span>{{ read_time }} min read</span>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-5xl md:text-7xl lg:text-[4.5rem] font-serif font-medium text-black leading-[1.1] tracking-tight mb-10 p-name" itemprop="name headline">
+            {{ page.title | escape }}
+        </h1>
 
-    {%- assign author_id = page.author | default: "codatta_team" -%}
-    {%- assign author = site.data.authors[author_id] -%}
-    {%- if author -%}
-    <div class="author-bio" style="margin-top: 0; margin-bottom: 2rem; background: none; padding: 0;">
-        {% if author.avatar %}
-        <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" class="author-avatar"
-            style="width: 50px; height: 50px; border-radius: 50%; float: left; margin-right: 15px;">
-        {% endif %}
-        <div style="overflow: hidden;">
-            <h4 style="margin: 0;">{{ author.name }}</h4>
-            <p style="margin: 0; font-size: 0.9em; color: #666;">{{ author.bio }}</p>
-            <div class="author-social" style="font-size: 0.8em;">
-                {% if author.twitter %}<a href="https://twitter.com/{{ author.twitter }}">Twitter</a>{% endif %}
-                {% if author.github %} | <a href="https://github.com/{{ author.github }}">GitHub</a>{% endif %}
-                {% if author.linkedin %} | <a href="https://linkedin.com/in/{{ author.linkedin }}">LinkedIn</a>{% endif
-                %}
+        <!-- Author Block -->
+        {%- assign author_id = page.author | default: "codatta_team" -%}
+        {%- assign author = site.data.authors[author_id] -%}
+        <div class="flex items-center justify-center gap-3">
+            {% if author.avatar %}
+              <img 
+                src="{{ author.avatar | relative_url }}" 
+                class="w-10 h-10 rounded-full grayscale object-cover border border-gray-100" 
+                alt="{{ author.name }}" 
+              />
+            {% endif %}
+            <div class="text-left">
+                <div class="text-sm font-medium text-black p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ author.name | default: page.author }}</span>
+                </div>
+                {% if author.title %}
+                  <div class="text-xs text-gray-500 font-sans tracking-wide">{{ author.title }}</div>
+                {% endif %}
             </div>
         </div>
+    </header>
+
+    <!-- Featured Image -->
+    {% if page.image %}
+      <div class="max-w-[1000px] mx-auto px-4 sm:px-6 mb-24">
+          <div class="aspect-[16/9] w-full bg-gray-50 overflow-hidden shadow-sm">
+              <img 
+                  src="{{ page.image | relative_url }}" 
+                  alt="{{ page.title | escape }}" 
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out"
+              />
+          </div>
+      </div>
+    {% endif %}
+
+    <!-- Content -->
+    <div class="max-w-[680px] mx-auto px-6">
+         <div class="e-content
+            prose prose-lg prose-stone max-w-none
+            
+            /* Headings */
+            [&_h2]:text-[2rem] [&_h2]:leading-tight [&_h2]:tracking-tight [&_h2]:text-black [&_h2]:mt-16
+            [&_h3]:text-2xl [&_h3]:mt-12 [&_h3]:font-medium [&_h3]:text-black
+            
+            /* Lead Paragraph (The Mercor/Editorial Style) */
+            [&>p:first-of-type]:text-[1.35rem] 
+            [&>p:first-of-type]:leading-[1.6] 
+            [&>p:first-of-type]:text-gray-800 
+            [&>p:first-of-type]:font-serif 
+            [&>p:first-of-type]:mb-12
+            
+            /* Standard Paragraphs */
+            [&_p]:font-sans 
+            [&_p]:text-[1.125rem] 
+            [&_p]:text-[#222] 
+            [&_p]:leading-[1.8] 
+            [&_p]:mb-8
+            
+            /* Blockquotes */
+            [&_blockquote]:pl-8 
+            [&_blockquote]:py-2 
+            [&_blockquote]:my-12
+            [&_blockquote]:text-2xl 
+            [&_blockquote]:leading-normal 
+            [&_blockquote]:text-black
+            
+            /* Images inside markdown */
+            [&_img]:grayscale 
+            hover:[&_img]:grayscale-0 
+            [&_img]:transition-all 
+            [&_img]:duration-700
+            [&_img]:my-12 
+            [&_img]:rounded-sm
+            
+            /* Lists */
+            [&_li]:text-[1.125rem] 
+            [&_li]:text-[#222] 
+            [&_li]:marker:text-gray-300
+         " itemprop="articleBody">
+            {{ content }}
+         </div>
+
+         <!-- Post Footer / Tags -->
+         <div class="mt-24 pt-12 border-t border-gray-100">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+                <div class="flex gap-2 flex-wrap">
+                    {% for tag in page.tags %}
+                        <span class="text-[11px] font-mono border border-gray-200 px-3 py-1.5 text-gray-500 uppercase tracking-wider hover:border-black hover:text-black transition-colors cursor-pointer rounded-full bg-gray-50">
+                            {{ tag }}
+                        </span>
+                    {% endfor %}
+                </div>
+                
+                <a href="{{ '/' | relative_url }}" 
+                  class="group flex items-center gap-2 text-sm font-medium !text-gray-500 hover:!text-black transition-colors !no-underline"
+                >
+                  <span class="group-hover:-translate-x-1 transition-transform duration-300">←</span>
+                  Back to Overview
+                </a>
+            </div>
+         </div>
     </div>
-    {%- endif -%}
-
-    <div class="post-content e-content" itemprop="articleBody">
-        {{ content }}
-    </div>
-
-    <hr>
-
-    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+  </article>
+</div>
