@@ -3,9 +3,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {%- seo -%}
 <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/app.css" | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          serif: ['Newsreader', 'serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        colors: {
+          codatta: {
+            black: '#0a0a0a',
+            gray: '#666666',
+            light: '#f5f5f5',
+            border: '#e5e5e5'
+          }
+        },
+        typography: {
+          DEFAULT: {
+            css: {
+              color: '#222',
+              maxWidth: '100%',
+              '--tw-prose-headings': '#0a0a0a',
+              h1: {
+                fontFamily: 'Newsreader, serif',
+                fontWeight: '500',
+              },
+              h2: {
+                fontFamily: 'Newsreader, serif',
+                fontWeight: '500',
+                marginTop: '2em',
+              },
+              a: {
+                color: '#000',
+                fontWeight: '500',
+                textDecoration: 'underline',
+                textDecorationColor: '#e5e5e5',
+                textUnderlineOffset: '4px',
+                '&:hover': {
+                  color: '#666',
+                  textDecorationColor: '#000',
+                },
+              },
+              blockquote: {
+                fontFamily: 'Newsreader, serif',
+                fontStyle: 'italic',
+                fontWeight: '400',
+                borderLeftColor: '#000',
+              }
+            },
+          },
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Hide scrollbar for cleaner aesthetic but allow scroll */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+</style>
 {%- feed_meta -%}
 {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}

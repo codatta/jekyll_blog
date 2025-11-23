@@ -6,6 +6,8 @@ categories: [Ecosystem & Community]
 author: codatta_team
 status: official
 image: /assets/images/binance_booster.png
+tags: [Binance, Growth, BNB]
+excerpt: "Codatta's journey with the Binance Booster program has been transformative. Read about how strategic mentorship, technical support from BNB Chain, and community expansion are accelerating our vision for a decentralized data economy."
 ---
 
 ![Binance Booster](/assets/images/binance_booster.png)

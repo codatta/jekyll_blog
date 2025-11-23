@@ -1,0 +1,175 @@
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+  <div class="max-w-[1000px] mx-auto px-6">
+    <div class="flex justify-between items-center h-20 md:h-24">
+      
+      <!-- Logo -->
+      <a class="flex items-center group z-50 relative" href="{{ "/" | relative_url }}">
+        <img 
+          src="https://raw.githubusercontent.com/codatta/brand-kit/main/logo/svg/symbol_black.svg" 
+          alt="{{ site.title | escape }}" 
+          class="h-8 w-auto"
+          onerror="this.style.display='none';this.parentElement.innerText='Codatta.'"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      {% if page.layout == 'post' %}
+      <nav class="flex items-center gap-8">
+        <a href="{{ '/' | relative_url }}" 
+           class="group text-[11px] font-mono uppercase tracking-widest !text-gray-400 hover:!text-black md:flex items-center gap-2 hover:!no-underline transition-colors hidden">
+           <span class="transition-transform duration-300 group-hover:-translate-x-1">&lt;</span> Back to Overview
+         </a>
+     </nav>
+     {% else %}
+      <nav class="hidden md:flex items-center gap-6" id="desktop-nav">
+        <a href="{{ '/' | relative_url }}" 
+           class="nav-link text-[11px] font-mono uppercase tracking-widest transition-colors duration-200 !text-gray-400 hover:!text-black hover:!no-underline" 
+           data-category="all">All</a>
+        
+        {% assign raw_cats = "" | split: "" %}
+        {% for cat_pair in site.categories %}
+          {% assign raw_cats = raw_cats | push: cat_pair[0] %}
+        {% endfor %}
+        {% assign raw_cats = raw_cats | sort %}
+        
+        {% for cat in raw_cats %}
+          {% if cat != "Other" %}
+          <a href="{{ '/' | relative_url }}#{{ cat | slugify }}" 
+             class="nav-link text-[11px] font-mono uppercase tracking-widest transition-colors duration-200 !text-gray-400 hover:!text-black hover:!no-underline"
+             data-category="{{ cat | slugify }}">
+              {{ cat }}
+          </a>
+          {% endif %}
+        {% endfor %}
+
+        <!-- Always show Other last if it exists or just as a static item if preferred, but based on user request "dynamic extraction", 
+             if "Other" is in the list, we might want to handle it. 
+             The previous code had a hardcoded "Others" link. I will keep that pattern but ensure it links to #other 
+        -->
+        <a href="{{ '/' | relative_url }}#other" 
+           class="nav-link text-[11px] font-mono uppercase tracking-widest transition-colors duration-200 !text-gray-400 hover:!text-black hover:!no-underline"
+           data-category="other">Others</a>
+      </nav>
+      {% endif %}
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden z-50">
+         <button id="mobile-menu-toggle" class="p-2">
+             <!-- Menu Icon -->
+             <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+             <!-- Close Icon -->
+             <svg id="icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+         </button>
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 top-[80px] z-40 hidden bg-black/25 backdrop-blur-[2px]">
+     <!-- Menu Content -->
+     <div class="bg-white w-full py-8 px-6 border-t border-gray-100 shadow-xl flex flex-col space-y-6 animate-in slide-in-from-top-2 fade-in duration-200">
+        {% if page.layout == 'post' %}
+          <a href="{{ '/' | relative_url }}" class="mobile-nav-link text-xl font-serif font-medium italic text-left text-gray-400 flex items-center gap-2 hover:text-black transition-colors">
+            <span>&lt;</span> Back to Overview
+          </a>
+        {% else %}
+          <a href="{{ '/' | relative_url }}" class="mobile-nav-link text-2xl font-serif font-medium italic text-left text-gray-300 hover:text-black transition-colors" data-category="all">All</a>
+          
+          {% for cat in raw_cats %}
+            {% if cat != "Other" %}
+              <a href="{{ '/' | relative_url }}#{{ cat | slugify }}" 
+                 class="mobile-nav-link text-2xl font-serif font-medium italic text-left text-gray-300 hover:text-black transition-colors" 
+                 data-category="{{ cat | slugify }}">
+                  {{ cat }}
+              </a>
+            {% endif %}
+          {% endfor %}
+          
+          <a href="{{ '/' | relative_url }}#other" class="mobile-nav-link text-2xl font-serif font-medium italic text-left text-gray-300 hover:text-black transition-colors" data-category="other">Others</a>
+        {% endif %}
+     </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+        const desktopLinks = document.querySelectorAll('.nav-link');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Toggle Mobile Menu
+        mobileMenuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                iconMenu.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            });
+        });
+
+        // Close on backdrop click
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        });
+
+        // Active State Logic
+        function updateActiveState() {
+            const hash = window.location.hash.substring(1); // remove #
+            const category = hash ? hash : 'all';
+
+            // Reset all
+            desktopLinks.forEach(link => {
+                link.classList.remove('!text-black', 'border-b', 'border-black', 'pb-0.5');
+                link.classList.add('!text-gray-400');
+            });
+            mobileLinks.forEach(link => {
+                // Reset mobile links to default black, remove active indicator
+                link.classList.remove('underline', 'decoration-2', 'underline-offset-4');
+                // Ensure they are black (though HTML class sets it, this cleans up previous JS states)
+                link.classList.remove('text-gray-300'); 
+                link.classList.add('text-black');
+            });
+
+            // Set active
+            const activeDesktop = document.querySelector(`.nav-link[data-category="${category}"]`);
+            if (activeDesktop) {
+                activeDesktop.classList.remove('!text-gray-400');
+                activeDesktop.classList.add('!text-black', 'border-b', '!border-black', 'pb-0.5');
+            }
+
+            const activeMobile = document.querySelector(`.mobile-nav-link[data-category="${category}"]`);
+            if (activeMobile) {
+                activeMobile.classList.add('underline', 'decoration-2', 'underline-offset-4');
+            }
+        }
+
+        // Listen for hash changes and initial load
+        window.addEventListener('hashchange', updateActiveState);
+        updateActiveState(); // Initial check
+    });
+  </script>
+</header>

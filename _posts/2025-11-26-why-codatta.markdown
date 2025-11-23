@@ -6,6 +6,8 @@ categories: [Other]
 author: codatta_team
 status: opinion
 image: /assets/images/why_codatta.png
+tags: [Web3, Mission, AI]
+excerpt: "Centralized AI control threatens to monopolize human knowledge. Codatta is building a decentralized knowledge layer where data ownership is respected, transparency is paramount, and the AI economy is open to everyone."
 ---
 
 ![Why Codatta](/assets/images/why_codatta.png)

@@ -1,0 +1,133 @@
+---
+layout: default
+---
+
+<!-- Sort posts: Sticky (weight > 0) first, then Date -->
+{% assign sticky_posts = site.posts | where_exp: "item", "item.weight != nil" | sort: "weight" | reverse %}
+{% assign normal_posts = site.posts | where_exp: "item", "item.weight == nil" %}
+{% assign sorted_posts = sticky_posts | concat: normal_posts %}
+
+<div class="animate-in fade-in duration-700">
+  <section class="max-w-[1000px] mx-auto px-6 py-12 md:py-24">
+    <div id="posts-list" class="flex flex-col">
+      {% for post in sorted_posts %}
+        <!-- Collect categories for this post -->
+        {% assign post_cats = "" | split: "" %}
+        {% for cat in post.categories %}
+          {% assign slug = cat | slugify %}
+          {% assign post_cats = post_cats | push: slug %}
+        {% endfor %}
+        
+        {% if post_cats.size > 0 %}
+          {% assign post_cats_str = post_cats | join: " " %}
+        {% else %}
+          {% assign post_cats_str = "other" %}
+        {% endif %}
+
+        <article 
+            class="post-item group cursor-pointer py-12 border-b border-gray-100 first:pt-0 last:border-0"
+            data-categories="{{ post_cats_str }}"
+        >
+           <a href="{{ post.url | relative_url }}" class="block hover:opacity-80 transition-opacity no-underline hover:!no-underline">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                
+                <!-- Content Side -->
+                <div class="md:col-span-8 order-2 md:order-1 flex flex-col h-full justify-between">
+                    <div>
+                        <!-- Meta Data -->
+                        <div class="flex items-center gap-3 mb-3 md:mb-4 text-[10px] font-mono uppercase tracking-widest text-gray-400">
+                            <span class="text-black font-medium">
+                              {% if post.categories.size > 0 %}
+                                {{ post.categories | first }}
+                              {% else %}
+                                Other
+                              {% endif %}
+                            </span>
+                            <span class="w-px h-3 bg-gray-200"></span>
+                            <span>{{ post.date | date: "%b %d, %Y" }}</span>
+                        </div>
+
+                        <h2 class="text-3xl md:text-[2.5rem] leading-[1.15] font-serif font-medium text-black mb-3 md:mb-4 group-hover:text-gray-600 transition-colors">
+                            {{ post.title | escape }}
+                        </h2>
+                        
+                        <div class="text-base md:text-lg text-gray-500 leading-relaxed max-w-2xl font-sans line-clamp-2 mb-4 md:mb-6">
+                            {{ post.excerpt | strip_html }}
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 mt-auto pt-2">
+                        {% assign author_id = post.author | default: "codatta_team" %}
+                        {% assign author = site.data.authors[author_id] %}
+                        <div class="w-6 h-6 rounded-full overflow-hidden bg-gray-100">
+                           {% if author.avatar %}
+                            <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" class="w-full h-full object-cover grayscale">
+                           {% endif %}
+                        </div>
+                        <span class="text-xs font-medium text-black">{{ author.name | default: post.author }}</span>
+                        <span class="text-gray-300 text-[10px]">•</span>
+                        
+                        {% assign words = post.excerpt | number_of_words %}
+                        {% assign read_time = words | divided_by: 180 | plus: 1 %}
+                        <span class="text-xs text-gray-400 font-mono">{{ read_time }} min read</span>
+                    </div>
+                </div>
+
+                <!-- Thumbnail Side -->
+                <div class="md:col-span-4 order-1 md:order-2">
+                    <div class="aspect-[16/10] md:aspect-[4/3] w-full overflow-hidden bg-gray-50 relative">
+                        {% if post.image %}
+                          <img 
+                              src="{{ post.image | relative_url }}" 
+                              alt="{{ post.title | escape }}"
+                              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+                          />
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+           </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<script>
+    function filterPosts() {
+        const hash = window.location.hash.substring(1);
+        const posts = document.querySelectorAll('.post-item');
+        
+        let currentCategory = hash ? hash.toLowerCase() : 'all';
+
+        // Mappings to match Jekyll data to Header categories if needed
+        // With dynamic categories, the header slugs should match the post slugs directly
+        // But we might still need this if we want 'crypto' to match 'blockchain' etc.
+        // Given the user said "extract dynamically", likely the header will have "Blockchain" instead of "Crypto".
+        // So exact matching is probably what we want now.
+        // However, I'll keep the logic loose enough to work.
+        
+        posts.forEach(post => {
+            const postCats = post.getAttribute('data-categories').split(' ');
+            
+            let match = false;
+            if (!currentCategory || currentCategory === 'all') {
+                match = true;
+            } else {
+                if (postCats.includes(currentCategory)) {
+                    match = true;
+                }
+            }
+
+            if (match) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+    }
+
+    window.addEventListener('hashchange', filterPosts);
+    window.addEventListener('DOMContentLoaded', filterPosts);
+</script>
