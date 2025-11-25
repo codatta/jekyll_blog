@@ -74,7 +74,8 @@ Now that the context is clear, let’s introduce today’s protagonist: `ERC-800
 
 Firstly start with the official description.
 
-![image.png](attachment:4325183f-f446-4bb6-9d34-e41df827a4bb:image.png)
+<img width="2048" height="422" alt="image" src="https://github.com/user-attachments/assets/401a07c0-038d-494c-ad0d-1ec33ac5673d" />
+
 
 Let me put that in plain terms:
 
@@ -303,7 +304,8 @@ remember how Bitcoin’s plain old `OP_RETURN` suddenly became the birthplace of
 
 The `Reputation Registry` can be viewed as the Agent’s review section — very much like the comment section you see on e-commerce platforms, like this below.
 
-![image.png](attachment:2b479751-6aa8-4e4b-9c5f-4ac1c5f0c625:image.png)
+<img width="1318" height="1364" alt="image" src="https://github.com/user-attachments/assets/e32af273-a72e-47aa-b991-94e954437fcc" />
+
 
 A score, a block of text, maybe a few images or even a video if someone is feeling extra enthusiastic — familiar, right?
 
@@ -527,7 +529,8 @@ On one hand, they’re unexpected; on the other hand, they are reasonable.
 
 These unconventional aspects come from passages like the following in the official specification:
 
-![image.png](attachment:52b42ce7-a5c8-4902-9390-1d54688a7fda:image.png)
+<img width="2048" height="115" alt="image" src="https://github.com/user-attachments/assets/078ef209-e418-4f4a-8eff-b94b23642db2" />
+
 
 The use of the word **expect** in the spec may sound gentle on the surface, but what it implies has the energy of a CEO issuing a decree.
 
