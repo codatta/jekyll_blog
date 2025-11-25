@@ -5,12 +5,12 @@ date:   2025-11-25 13:00:00 +0800
 categories: [Other]
 author: Jason404
 status: opinion
-image: /assets/images/why_codatta.png
+image: /assets/Jason404/ERC-8004 MCP on Ethereum.png
 tags: [Web3,AI, ERC-8004]
 excerpt: "- it’s closer to Claude’s MCP (Model Context Protocol)** or Google’s A2A (Agent to Agent) protocol.
 - Think of it as a resume template for AI agents that states who I am, what I can do, how I do it, and how to contact me. And the blockchain is like a job board where everyone posts their resumes; supply and demand can browse and choose freely"
 ---
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/71553888-04a4-4d10-b6b0-8e6bb8e7013f" />
+<img width="1024" height="1024" alt="image" src="/assets/Jason404/ERC-8004 MCP on Ethereum.png" />
 
 ## **TL;DR**
 
@@ -88,7 +88,7 @@ Now that the context is clear, let’s introduce today’s protagonist: `ERC-800
 
 Firstly start with the official description.
 
-<img width="2048" height="422" alt="image" src="https://github.com/user-attachments/assets/401a07c0-038d-494c-ad0d-1ec33ac5673d" />
+<img width="2048" height="422" alt="image" src="/assets/Jason404/ERC-8004.png" />
 
 
 Let me put that in plain terms:
@@ -162,7 +162,7 @@ Don’t worry — the secret lies inside the `URI`.
 
 The file typically looks something like this:
 
-```latex
+```json
 {
 "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
 "name": "myAgentName",
@@ -318,7 +318,7 @@ remember how Bitcoin’s plain old `OP_RETURN` suddenly became the birthplace of
 
 The `Reputation Registry` can be viewed as the Agent’s review section — very much like the comment section you see on e-commerce platforms, like this below.
 
-<img width="1318" height="1364" alt="image" src="https://github.com/user-attachments/assets/e32af273-a72e-47aa-b991-94e954437fcc" />
+<img width="1318" height="1364" alt="image" src="/assets/Jason404/Review.png" />
 
 
 A score, a block of text, maybe a few images or even a video if someone is feeling extra enthusiastic — familiar, right?
@@ -430,7 +430,7 @@ remember the `supportedTrust` field we mentioned earlier?
 
 If you’re confident in yourself and willing to authorize people to review you openly, then you can include "reputation" as one of the values in your supportedTrust list, like:
 
-```latex
+```json
  "supportedTrust": [
     "reputation",
   ]
@@ -543,7 +543,7 @@ On one hand, they’re unexpected; on the other hand, they are reasonable.
 
 These unconventional aspects come from passages like the following in the official specification:
 
-<img width="2048" height="115" alt="image" src="https://github.com/user-attachments/assets/078ef209-e418-4f4a-8eff-b94b23642db2" />
+<img width="2048" height="115" alt="image" src="/assets/Jason404/Deployment of ERC8004.png" />
 
 
 The use of the word **expect** in the spec may sound gentle on the surface, but what it implies has the energy of a CEO issuing a decree.
