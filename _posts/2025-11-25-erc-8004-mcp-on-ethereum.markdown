@@ -3,14 +3,13 @@ layout: post
 title:  "ERC-8004: MCP on Ethereum"
 date:   2025-11-25 13:00:00 +0800
 categories: [Other]
-author: Jason404
+author: jason_cheng
 status: opinion
-image: /assets/Jason404/ERC-8004 MCP on Ethereum.png
 tags: [Web3,AI, ERC-8004]
 excerpt: "- it’s closer to Claude’s MCP (Model Context Protocol)** or Google’s A2A (Agent to Agent) protocol.
 - Think of it as a resume template for AI agents that states who I am, what I can do, how I do it, and how to contact me. And the blockchain is like a job board where everyone posts their resumes; supply and demand can browse and choose freely"
 ---
-<img width="1024" height="1024" alt="image" src="/assets/Jason404/ERC-8004 MCP on Ethereum.png" />
+
 
 ## **TL;DR**
 
