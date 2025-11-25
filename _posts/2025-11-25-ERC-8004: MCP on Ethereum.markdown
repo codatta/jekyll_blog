@@ -1,14 +1,17 @@
 ---
 layout: post
 title:  "ERC-8004: MCP on Ethereum"
-date:   2025-11-21 13:00:00 +0800
+date:   2025-11-25 13:00:00 +0800
 categories: [Other]
-author: codatta_team
+author: Jason404
 status: opinion
 image: /assets/images/why_codatta.png
-tags: [Web3, Mission, AI]
-excerpt: "Centralized AI control threatens to monopolize human knowledge. Codatta is building a decentralized knowledge layer where data ownership is respected, transparency is paramount, and the AI economy is open to everyone."
+tags: [Web3,AI, ERC-8004]
+excerpt: "- it’s closer to Claude’s MCP (Model Context Protocol)** or Google’s A2A (Agent to Agent) protocol.
+- Think of it as a resume template for AI agents that states who I am, what I can do, how I do it, and how to contact me. And the blockchain is like a job board where everyone posts their resumes; supply and demand can browse and choose freely"
 ---
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/71553888-04a4-4d10-b6b0-8e6bb8e7013f" />
+
 ## **TL;DR**
 
 - Although `ERC-8004` is called “Trustless Agents,” it’s neither a large language model (LLM) nor an AI agent. Don’t expect it to chat like ChatGPT or code like Cursor.
