@@ -5,11 +5,10 @@ date:   2025-11-25 13:00:00 +0800
 categories: [Other]
 author: jason_cheng
 status: opinion
-tags: [Web3,AI, ERC-8004]
+tags: [Web3, AI, ERC-8004]
 excerpt: "- it’s closer to Claude’s MCP (Model Context Protocol)** or Google’s A2A (Agent to Agent) protocol.
 - Think of it as a resume template for AI agents that states who I am, what I can do, how I do it, and how to contact me. And the blockchain is like a job board where everyone posts their resumes; supply and demand can browse and choose freely"
 ---
-
 
 ## **TL;DR**
 
@@ -19,11 +18,11 @@ excerpt: "- it’s closer to Claude’s MCP (Model Context Protocol)** or Google
 - As for whether the resume information is perfectly truthful—no one can guarantee that. The protocol itself can’t solve that either.
 - Like almost all ERC, it primarily targets **developers**, not end-users. For ordinary users, just think of it as “**the Ethereum version of MCP**”. **The Ethereum version**” doesn’t mean “it merely runs on Ethereum.” This is Because it‘s a standard co-authored by the **Ethereum Foundation** with ecosystem veterans like **MetaMask** and **Coinbase**. Don’t assume such “official backing” is just hype. It doesn’t guarantee success—but each organization could bring a vast user base, which is the real significance.
 - The value of a protocol standard doesn’t hinge on how advanced the tech is or how fancy the architecture looks—it hinges on **mass adoption**. The more users, the richer the ecosystem, the more meaningful the protocol. In Web2, we say *traffic is king,* in Web3, we say *consensus is the currency.* If you’ve lived through the dominance of Web2 platforms or the meme frenzies of Web3, you already know what that means.
-- All in all, ERC-8004 is a good start. If you’re a **builder**—whether your focus is AI or Web3—this is worth watching.
+- All in all, `ERC-8004` is a good start. If you’re a **builder**—whether your focus is AI or Web3—this is worth watching.
 
-## **What is ERC?**
+## What is ERC?
 
-To understand “ERC” ,we should first understand **EIP**—**Ethereum Improvement Proposal**.
+To understand “ERC” ,we should first understand **EIP** (**Ethereum Improvement Proposal**).
 
 Simply put, if you think something in Ethereum feels off or could be better, go ahead and propose a fix. Don’t just point out the problem—bring the solution, too. After all, talk is cheap, and code speaks louder.
 
@@ -37,19 +36,19 @@ There’s always room for improvement in Ethereum — no offense, that doesn’t
 
 And since Ethereum was the first smart-contract chain with the biggest user base and most active ecosystem, it naturally draws the most proposals.
 
-To keep things tidy, EIPs are sorted into six buckets:**Core, Networking, Interface, ERC, Meta, Informational**  (check the official site for details, we won’t go into them here.).
+To keep things tidy, EIPs are categorized into six types: **Core, Networking, Interface, ERC, Meta EIP, Informational EIP** ([see the official Ethereum documentation on EIP types here](https://eips.ethereum.org/EIPS/eip-1#eip-types) for details):
 
 The **application-level** proposals fall under ERC, which stands for“**Ethereum Request for Comment**”.
 Don’t ask me who came up with that — it tells you absolutely nothing about what it exactly use for.
 Anyway, what’s done is done. Let’s move on.
 
-What means **application-level** proposals?
+**What means application-level proposals?**
 
 In plain terms, these are technical proposals which involve code but do **not** changing Ethereum’s underlying paradigm.
 
 Instead, they define how to leverage the existing infrastructure and architecture of Ethereum to support new applications.
 
-Why emphasize “involve code”? 
+**Why emphasize “involve code”?**
 
 Because proposals focused purely on governance or documentation also go through the EIP process, but they typically fall under the **Meta** or **Informational** categories.
 
@@ -67,7 +66,7 @@ Because **ERC** usually don’t affect the underlying network, **acceptance** do
 
 For instance, ERC-721 had been used widely **before** it formalized. Conversely, **Core** and **Networking** proposals need formal acceptance before deployment.
 
-## **Overview of ERC-8004**
+## Overview of ERC-8004
 
 By now, it should be clear that `ERC-8004` is an **application-level proposal**— as mentioned before, it’s already available for anyone to use, even though it hasn’t been officially finalized yet.
 
@@ -92,22 +91,18 @@ Firstly start with the official description.
 
 Let me put that in plain terms:
 
-<aside>
-💡
+> 💡 `ERC-8004` is a proposal jointly introduced by the Ethereum Foundation, Coinbase, and MetaMask. It defines a resume template for Agents, helping them clearly communicate who they are, what they can do, how they do it, how their work is validated, and how to contract them.
+> 
+> If everyone — sorry, every Agent — builds their “resume” following this template, the format becomes unified, communication costs drop, and interoperation becomes more convenient. As a result, Agents can be found and used more easily — all of which helps boost the Agent economy.
+>
+> In essence, this is a win–win standard for both sides of the market. And while it’s formally a resume template for “Agents,” in reality, it can be used by anyone — even a human or a tool like a calculator.
+>
+> As of November 6, 2025, `ERC-8004` is in the **Review** stage. This means everything we describe here reflects its current state — things may still evolve in the future.
+>
+> So, let’s stay tuned to how it evolves.
 
-`ERC-8004` is a proposal jointly introduced by the Ethereum Foundation, Coinbase, and MetaMask. It defines a resume template for Agents, helping them clearly communicate who they are, what they can do, how they do it, how their work is validated, and how to contract them.
 
-If everyone — sorry, every Agent — builds their “resume” following this template, the format becomes unified, communication costs drop, and interoperation becomes more convenient. As a result, Agents can be found and used more easily — all of which helps boost the Agent economy.
-
-In essence, this is a win–win standard for both sides of the market. And while it’s formally a resume template for “Agents,” in reality, it can be used by anyone — even a human or a tool like a calculator.
-
-As of November 6, 2025, `ERC-8004` is in the **Review** stage. This means everything we describe here reflects its current state — things may still evolve in the future.
-
-So, Let’s stay tuned to how it evolves.
-
-</aside>
-
-## **ERC-8004 Architecture**
+## ERC-8004 Architecture
 
 As mentioned earlier, `ERC-8004` is essentially a **resume template** — a way for an Agent to tell the world who they are, what they can do, How to verify their work, and how to be contacted.
 
@@ -161,7 +156,7 @@ Don’t worry — the secret lies inside the `URI`.
 
 The file typically looks something like this:
 
-```json
+```yaml
 {
 "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
 "name": "myAgentName",
@@ -313,7 +308,7 @@ The crypto community has a history of turning trivial features into magic —
 
 remember how Bitcoin’s plain old `OP_RETURN` suddenly became the birthplace of inscriptions?
 
-## **Reputation Registry**
+## Reputation Registry
 
 The `Reputation Registry` can be viewed as the Agent’s review section — very much like the comment section you see on e-commerce platforms, like this below.
 
@@ -435,7 +430,7 @@ If you’re confident in yourself and willing to authorize people to review you 
   ]
 ```
 
-## **Validation Registry**
+## Validation Registry
 
 The `Validation Registry` deals with how an Agent’s work is evaluated — what the expected deliverables are, who verifies them, how the verification is done, and what the acceptance criteria look like.
 
@@ -465,8 +460,8 @@ Their purpose is pretty much spelled out in their names.
 
 The `validationRequest` function looks like this:
 
-```latex
-**function** validationRequest(address validatorAddress, uint256 agentId, string requestUri, bytes32 requestHash) external
+```javascript
+function validationRequest(address validatorAddress, uint256 agentId, string requestUri, bytes32 requestHash) external
 ```
 
 For the parameters:
@@ -478,8 +473,8 @@ For the parameters:
 
 The `validationResponse` function looks like this:
 
-```latex
-**function** validationResponse(bytes32 requestHash, uint8 response, string responseUri, bytes32 responseHash, bytes32 tag) external
+```javascript
+function validationResponse(bytes32 requestHash, uint8 response, string responseUri, bytes32 responseHash, bytes32 tag) external
 ```
 
 For the parameters:
@@ -524,15 +519,15 @@ Not everything is as verifiable as a crypto signature.
 
 Not everything is as clear-cut as an arithmetic problem with a single correct answer.
 
-**Dig too deep into this stuff and you’ll fall straight into a bottomless pit.**
+**Dig too deep into this stuff and you’ll fall straight into a rabbit-hole.**
 
 It seems the designers of the `Validation Registry` understood this well. Rather than forcing a rigid, top-down standard, they wisely leave this part — the criteria, the methods, and whether people accept the outcomes —  to the community.
 
-And you’ll notice: none of this is encoded in the protocol itself or enforced on-chain. In fact, It *can’t* be.
+And you’ll notice: **none of this is encoded in the protocol itself or enforced on-chain. In fact, It *can’t* be.**
 
 Most of these considerations will emerge only through real-world use of `ERC-8004`, be refined over time, and eventually be summarized and standardized outside the core spec.
 
-## **An atypical ERC**
+## An atypical ERC
 
 If we were only talking about the mechanics of `ERC-8004`, we could pretty much wrap things up here.
 
@@ -609,7 +604,7 @@ Unexpected, because most ERC standards don’t recommend a single-instance deplo
 
 Reasonable, because given its goals and long-term ecosystem vision, it’s actually a sensible choice.
 
-## **Conclusion**
+## Conclusion
 
 As for the core ideas and mechanisms behind `ERC-8004`, that’s pretty much the gist of it.
 
