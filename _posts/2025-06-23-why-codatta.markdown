@@ -32,13 +32,13 @@ Codatta enables that.
 
 Every contribution on Codatta — whether it’s annotation, reasoning, or domain-expert judgement — becomes a data asset with:
 
-* *Provenance*: who contributed, validated, or staked on it
+* **Provenance**: who contributed, validated, or staked on it
 
-* *Royalty rights*: automatic revenue share whenever the data is used
+* **Royalty rights**: automatic revenue share whenever the data is used
 
-* *Transparent usage*: every access event is attributable and auditable
+* **Transparent usage**: every access event is attributable and auditable
 
-* *Ownership*: recorded on-chain, fractional, and transferable
+* **Ownership**: recorded on-chain, fractional, and transferable
 
 Instead of being paid once, contributors earn continuously as their knowledge powers more systems.
 
@@ -50,15 +50,15 @@ It aligns incentives on both sides.
 
 We rely on blockchain because it gives us the tools to make this system possible:
 
-* Programmable ownership: Every contribution is tied to a cryptographic fingerprint, enabling precise ownership of data units.
+* **Programmable ownership**: Every contribution is tied to a cryptographic fingerprint, enabling precise ownership of data units.
 
-* *Immutable provenance*: You can trace exactly how a dataset was built and who contributed to it.
+* **Immutable provenance**: You can trace exactly how a dataset was built and who contributed to it.
 
-* *Automatic payouts*: Revenue is split instantly and globally — no intermediaries, no manual accounting.
+* **Automatic payouts**: Revenue is split instantly and globally — no intermediaries, no manual accounting.
 
-* *Liquidity*: Ownership fractions can be traded or bundled, giving contributors access to upside and capital.
+* **Liquidity**: Ownership fractions can be traded or bundled, giving contributors access to upside and capital.
 
-* *Open access logs*: No silent reuse. Every training or inference event is verifiable.
+* **Open access logs**: No silent reuse. Every training or inference event is verifiable.
 
 This foundation means human knowledge doesn’t vanish into a black box. It becomes part of an open economy.
 
