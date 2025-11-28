@@ -14,7 +14,7 @@ But before we get into how these two worlds connect, we need to introduce the pr
 
 Let’s start with the “official” introduction.
 
-![image.png](attachment:cff8e119-fc6a-4fc5-beaf-d3a322456568:image.png)
+assets/Jason404/What is Codatta.png
 
 In plain terms: **it provides high-quality data for AI training**.
 
