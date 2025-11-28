@@ -14,7 +14,8 @@ But before we get into how these two worlds connect, we need to introduce the pr
 
 Let’s start with the “official” introduction.
 
-![What is Codatta](assets/Jason404/What is Codatta.png)
+<img width="1452" height="478" alt="image" src="assets/Jason404/What is Codatta.png" />
+
 In plain terms: **it provides high-quality data for AI training**.
 
 Why does AI need high-quality training data? Because the way AI evolves today is completely different from many years ago. Early on, humans taught AI explicit rules, like — “red light stop,” “green light go.” Easy to teach, easy to learn.
