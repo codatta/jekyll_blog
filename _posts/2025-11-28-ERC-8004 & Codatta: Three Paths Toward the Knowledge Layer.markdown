@@ -14,7 +14,7 @@ But before we get into how these two worlds connect, we need to introduce the pr
 
 Let’s start with the “official” introduction.
 
-<img width="1452" height="478" alt="image" src="assets/Jason404/What is Codatta.png" />
+<img width="1452" height="478" alt="image" src="/assets/Jason404/What is Codatta.png" />
 
 In plain terms: **it provides high-quality data for AI training**.
 
