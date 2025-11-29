@@ -153,8 +153,8 @@ Therefore, within the **EVM** ecosystem, it is entirely feasible to implement **
 
 As noted earlier, **Codatta DID** is Codatta’s decentralized identity system. It approaches identity from the data contribution perspective: 
 
-- Who contributed what data (Sample, Label, Validation)？
-- in what way？
+- Who contributed what data ？
+- in what way (Sample, Label, Validation)？
 - and with what level of quality (Reputation)？
 
 And critically, a “user” here does **not** have to be a human. It can also be an **AI Agent**.
