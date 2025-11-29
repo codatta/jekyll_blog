@@ -151,7 +151,7 @@ Therefore, within the **EVM** ecosystem, it is entirely feasible to implement **
 
 **Fusion — `ERC-8004` and Codatta DID enhancing each other’s completeness and trustworthiness**
 
-As noted earlier, **Codatta DID** is Codatta’s decentralized identity system. It approaches identity from the data contribution perspective: 
+As noted earlier, **Codatta DID** is Codatta’s decentralized identity system. It approaches user identity from the data contribution perspective: 
 
 - Who contributed what data ？
 - in what way (Sample, Label, Validation)？
