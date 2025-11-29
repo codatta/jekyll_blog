@@ -174,7 +174,7 @@ Conversely, from the perspective of `ERC-8004`, identity data coming from Codatt
 
 # **Upstream & Downstream**
 
-**Downstream/Upstream: Codatta as the upstream supplier for `ERC-8004` Agents, and `ERC-8004` as the downstream consumer of Codatta — together forming a complete, fine-grained Royalty Engine loop.**
+**Downstream & Upstream: Codatta as the upstream supplier for `ERC-8004` Agents, and `ERC-8004` as the downstream consumer of Codatta — together forming a complete, fine-grained Royalty Engine loop.**
 
 Before diving in, we need one piece of background about **Royalty Engine,** which is the core business model behind Codatta.
 
