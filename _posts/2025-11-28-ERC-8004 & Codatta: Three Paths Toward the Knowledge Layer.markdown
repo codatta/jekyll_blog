@@ -135,7 +135,7 @@ In case we haven’t formally introduced it: **Codatta DID** is Codatta’s dece
 
 Although `ERC-8004` was originally proposed as a protocol for **Trustless Agents**, its openness and extensibility — fewer constraints, less rigid structure — make it adaptable to other use cases through customized field definitions.
 
-We’ve seen similar evolution before: `ERC-721` began life in *CryptoKitties*, but later proved to be capable of far more—**PFP collections, brand IP, membership passes**, even today’s rising **RWA** experiments. Standards evolve as ecosystems evolve.
+We’ve seen similar evolution before: `ERC-721` began life in *CryptoKitties*, but later proved to be capable of far more—**PFP（Profile Picture NFT）, brand IP, membership passes**, even today’s rising **RWA** experiments. Standards evolve as ecosystems evolve.
 
 As noted in the earlier `ERC-8004` breakdown, one of its core purposes is to **represent and manage Agent resumes**. But despite its Agent-centric posture, nothing in the standard actually enforces that exclusivity. At the execution layer, it imposes virtually **no binding constraints**.
 
