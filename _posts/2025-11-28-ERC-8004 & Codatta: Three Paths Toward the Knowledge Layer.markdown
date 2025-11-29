@@ -1,3 +1,14 @@
+---
+layout: post
+title:  "ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer"
+date:   2025-11-29 13:00:00 +0800
+categories: [Other]
+author: jason404
+status: opinion
+tags: [Web3, AI, ERC-8004]
+excerpt: "- I’ve sketched **three potential ways** they could connect—ranging from deep to loose integration. For simplicity, let’s call them: Resconstruction, Fusion, Upstream & Downstream"
+---
+
 In a previous article, I did a full deep dive into the `ERC-8004` — its vision, its purpose, and how it works under the hood.
 
 Of course, that breakdown wasn’t written just for fun. As one of the industry’s many “uncelebrated but perpetually useful” workhorse, staying on top of AI × Web3 developments is a survival skill, not a hobby. And beyond keeping up with the industry, evaluating whether a protocol is actually viable and usable is just as critical. And if it truly connects with real use cases one day, well… being early could turn out to be a very profitable head start.
