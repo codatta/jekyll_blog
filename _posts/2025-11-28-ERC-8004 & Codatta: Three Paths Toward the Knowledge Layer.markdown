@@ -72,7 +72,7 @@ If you want AI to learn how to write code, you can’t just feed it a pile of me
 
 You want a high score? You grind through practice questions until your soul evaporates.
 
-But someone has to **keep making** those questions — suffering on *administrator mode*. *And* they can’t just copy-paste old questions either. The questions have to feel fresh, convince students they’re leveling up, and, with any luck, **snipe a few real exam items**.
+But someone has to **keep writing exam questions** those questions — suffering on *administrator mode*. *And* they can’t just copy-paste old questions either. The questions have to feel fresh, convince students they’re leveling up, and, with any luck, **snipe a few real exam items**.
 
 But that’s not the end of it. A new problem emerges: after spending all that time and effort creating high-quality data for AI, **what do I get in return**?
 
