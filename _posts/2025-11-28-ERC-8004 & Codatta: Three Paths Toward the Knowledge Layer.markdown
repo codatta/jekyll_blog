@@ -93,7 +93,7 @@ Before we explore how they might work together, let’s briefly recap the two pl
 
 **ERC-8004**
 
-Think of it as **LinkedIn/BOSS Zhipin for Agents**: Agents list their on-chain résumés, and employers find the ones they want, pay them, and put them to work.
+Think of it as **LinkedIn for Agents**: Agents list their on-chain résumés, and employers find the ones they want, pay them, and put them to work.
 
 </aside>
 
