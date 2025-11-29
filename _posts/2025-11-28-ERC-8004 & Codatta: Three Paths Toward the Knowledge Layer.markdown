@@ -143,7 +143,7 @@ And beyond that, who can even say with certainty whether an “Agent” is pure 
 
 Strip away the narrative and what remains is this: **ERC-8004 is a digital identity schema.** And identity, across most domains, follows familiar patterns—no matter how creative a resume layout looks, the fundamental elements barely change.
 
-So if the structure is shared, compatibility becomes natural.
+Since they belong to the same category in terms of use cases, it should theoretically be feasible for them to be compatible with each other.
 
 Therefore, within the **EVM** ecosystem, it is entirely feasible to implement **Codatta DID** on top of ****`ERC-8004`, preserving core identity functionality while improving DID interoperability and usability across the broader **EVM** landscape.
 
