@@ -145,7 +145,7 @@ Strip away the narrative and what remains is this: **ERC-8004 is a digital ident
 
 Since they belong to the same category in terms of use cases, it should theoretically be feasible for them to be compatible with each other.
 
-Therefore, within the **EVM** ecosystem, it is entirely feasible to implement **Codatta DID** on top of ****`ERC-8004`, preserving core identity functionality while improving DID interoperability and usability across the broader **EVM** landscape.
+Therefore, within the **EVM** ecosystem, it is entirely feasible to implement **Codatta DID** on top of `ERC-8004`, preserving core identity functionality while improving DID interoperability and usability across the broader **EVM** landscape.
 
 # **Fusion**
 
