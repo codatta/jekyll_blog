@@ -212,7 +212,7 @@ Connecting Codatta’s data lineage with `ERC-8004` Agent execution records sets
 
 The discussion above approaches the problem from a business and ecosystem perspective and offers a set of preliminary, directional thoughts. These ideas are not mere daydreaming; each approach has been considered with technical feasibility in mind, so that none of it collapses into wishful thinking or empty speculation.
 
-Whether any of these approaches will prove effective can only be answered through real-world implementation. But at a minimum, they must all be buildable ****— otherwise, there’d be nothing to test. As the old saying goes: *if you want to know whether it’s a horse or a mule, you eventually have to take it out for a run* — not leave it on the whiteboard for endless debate.
+Whether any of these approaches will prove effective can only be answered through real-world implementation. But at a minimum, they must all be buildable — otherwise, there’d be nothing to test. As the old saying goes: *if you want to know whether it’s a horse or a mule, you eventually have to take it out for a run* — not leave it on the whiteboard for endless debate.
 
 Our standing principle remains unchanged: actions speak louder than words.
 
