@@ -68,7 +68,7 @@ This isn’t as simple as snapping a random picture.
 
 Even a photo needs retouching afterward, right? Now imagine the time and effort required to produce **high-quality training data**. In many cases, it takes serious work. We call that kind of refined, insight-carrying data **Knowledge**.
 
-If you want AI to learn how to write code, you can’t just feed it a pile of messy, unstructured snippets that don’t even compile. You need to show ****it good code. Because if what it sees is always spaghetti code that fails to build, what exactly do you expect it to learn? Garbage in, garbage out.
+If you want AI to learn how to write code, you can’t just feed it a pile of messy, unstructured snippets that don’t even compile. You need to show it good code. Because if what it sees is always spaghetti code that fails to build, what exactly do you expect it to learn? Garbage in, garbage out.
 
 You want a high score? You grind through practice questions until your soul evaporates.
 
