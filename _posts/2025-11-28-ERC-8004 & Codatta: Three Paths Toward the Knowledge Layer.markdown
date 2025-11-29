@@ -3,7 +3,7 @@ layout: post
 title:  "ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer"
 date:   2025-11-29 13:00:00 +0800
 categories: [Other]
-author: jason404
+author: Jason C
 status: opinion
 tags: [Web3, AI, ERC-8004]
 excerpt: "- I’ve sketched **three potential ways** they could connect—ranging from deep to loose integration. For simplicity, let’s call them: Resconstruction, Fusion, Upstream & Downstream"
