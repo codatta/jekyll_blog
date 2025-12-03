@@ -19,9 +19,7 @@ So I spent some time digging deeper and—no surprise—there really are meaning
 
 But before we get into how these two worlds connect, we need to introduce the protagonists properly. `ERC-8004` has already had its moment in the spotlight, so let’s focus on the other player making its entrance—**Codatta**, an emerging solution aimed at building the **Knowledge Layer** for AI.
 
----
-
-# **What Is the Knowledge Layer?**
+## **What Is the Knowledge Layer?**
 
 Let’s start with the “official” introduction.
 
@@ -138,7 +136,7 @@ For simplicity, let’s call them:
 
 👉 **Upstream & Downstream**
 
-# **Reconstruction**
+## **Reconstruction**
 
 **Reconstruction: Rebuilding Codatta DID using the `ERC-8004` standard, so that DID information is recorded in the EVM ecosystem in an `ERC-8004`-compatible form.**
 
@@ -158,7 +156,7 @@ Since they belong to the same category in terms of use cases, it should theoreti
 
 Therefore, within the **EVM** ecosystem, it is entirely feasible to implement **Codatta DID** on top of `ERC-8004`, preserving core identity functionality while improving DID interoperability and usability across the broader **EVM** landscape.
 
-# **Fusion**
+## **Fusion**
 
 **Fusion — `ERC-8004` and Codatta DID enhancing each other’s completeness and trustworthiness**
 
@@ -183,7 +181,7 @@ For **Codatta DID**, compatibility with `ERC-8004` means the ability to plug sea
 
 Conversely, from the perspective of `ERC-8004`, identity data coming from Codatta DID is not theoretical or self-declared — it is backed by long-term, real operational history. This gives it a level of authenticity and completeness that few identity systems can match. With such credible identity signals, `ERC-8004` adoption and ecosystem growth could advance significantly faster.
 
-# **Upstream & Downstream**
+## **Upstream & Downstream**
 
 **Downstream & Upstream: Codatta as the upstream supplier for `ERC-8004` Agents, and `ERC-8004` as the downstream consumer of Codatta — together forming a complete, fine-grained Royalty Engine loop.**
 
@@ -219,7 +217,7 @@ Conversely, Codatta’s data lineage system can feed back into AI Agent attribut
 
 Connecting Codatta’s data lineage with `ERC-8004` Agent execution records sets off a self-reinforcing upward spiral — one in which both data contributors and application developers come out ahead.
 
-# **Conclusion**
+## **Conclusion**
 
 The discussion above approaches the problem from a business and ecosystem perspective and offers a set of preliminary, directional thoughts. These ideas are not mere daydreaming; each approach has been considered with technical feasibility in mind, so that none of it collapses into wishful thinking or empty speculation.
 

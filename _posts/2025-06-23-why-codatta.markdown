@@ -9,13 +9,11 @@ image:
 excerpt: "Centralized AI control threatens to monopolize human knowledge. Codatta is building a decentralized knowledge layer where data ownership is respected, transparency is paramount, and the AI economy is open to everyone."
 ---
 
-
 AI keeps getting better, but its most important ingredient hasn’t changed: people. Not just crowd workers — people with judgement, taste, lived experience, and domain expertise. They teach models how to reason, weigh trade-offs, and understand intent.
 
 There’s a new kind of work taking shape: experts contributing intelligence that machines learn from.
 
 Codatta is the infrastructure that lets these contributors own what they create.
-
 
 ## Why We’re Building This
 
@@ -26,7 +24,6 @@ We think that needs to change.
 If humans are training the next generation of AI, then the intelligence they provide should be something they can own — something that can generate returns as it’s used.
 
 Codatta enables that.
-
 
 ## Data Becomes an Asset
 
@@ -61,7 +58,6 @@ We rely on blockchain because it gives us the tools to make this system possible
 * **Open access logs**: No silent reuse. Every training or inference event is verifiable.
 
 This foundation means human knowledge doesn’t vanish into a black box. It becomes part of an open economy.
-
 
 ## The Future We See
 
