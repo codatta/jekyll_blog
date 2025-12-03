@@ -6,8 +6,7 @@ categories: [Other]
 author: jason404
 status: opinion
 tags: [Web3, AI, ERC-8004]
-excerpt: "- it’s closer to Claude’s MCP (Model Context Protocol)** or Google’s A2A (Agent to Agent) protocol.
-- Think of it as a resume template for AI agents that states who I am, what I can do, how I do it, and how to contact me. And the blockchain is like a job board where everyone posts their resumes; supply and demand can browse and choose freely"
+excerpt: "It’s closer to Claude’s MCP or Google’s A2A protocol. Think of it as a resume template for AI agents that states who I am, what I can do, how I do it, and how to contact me. And the blockchain is like a job board where everyone posts their resumes; supply and demand can browse and choose freely"
 ---
 
 ## **TL;DR**

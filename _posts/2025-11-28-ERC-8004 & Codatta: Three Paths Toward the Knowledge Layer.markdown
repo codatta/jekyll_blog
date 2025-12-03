@@ -6,7 +6,7 @@ categories: [Other]
 author: Jason C
 status: opinion
 tags: [Web3, AI, ERC-8004]
-excerpt: "- I’ve sketched **three potential ways** they could connect—ranging from deep to loose integration. For simplicity, let’s call them: Resconstruction, Fusion, Upstream & Downstream"
+excerpt: "I’ve sketched three potential ways they could connect—ranging from deep to loose integration. For simplicity, let’s call them: Resconstruction, Fusion, Upstream & Downstream."
 ---
 
 In a previous article, I did a full deep dive into the `ERC-8004` — its vision, its purpose, and how it works under the hood.
