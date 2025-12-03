@@ -1,0 +1,51 @@
+name: Validate Markdown in HTML
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-markdown:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3'
+        bundler-cache: true
+    
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+    
+    - name: Validate and Auto-fix Markdown in HTML blocks
+      id: validate
+      run: |
+        # First, check if there are any issues
+        if ruby scripts/validate_markdown_in_html.rb 2>&1 | grep -q "ERRORS"; then
+          echo "Issues found. Attempting auto-fix..."
+          AUTO_FIX=true ruby scripts/validate_markdown_in_html.rb
+          echo "fixed=true" >> $GITHUB_OUTPUT
+        else
+          echo "No issues found."
+          echo "fixed=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Check for auto-fixed files
+      if: steps.validate.outputs.fixed == 'true'
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "⚠️  Files were auto-fixed. Showing diff:"
+          git diff
+          echo ""
+          echo "❌ CI check failed: Markdown in HTML blocks was auto-fixed."
+          echo "Please review the changes above and commit them, or fix the issues manually."
+          exit 1
+        fi
+
