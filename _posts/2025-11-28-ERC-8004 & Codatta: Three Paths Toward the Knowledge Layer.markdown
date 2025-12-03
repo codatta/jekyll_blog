@@ -100,25 +100,25 @@ Before we explore how they might work together, let’s briefly recap the two pl
 <aside>
 💡 <strong>ERC-8004</strong>
 
-Think of it as **LinkedIn for Agents**: Agents list their on-chain résumés, and employers find the ones they want, pay them, and put them to work.
+Think of it as <strong>LinkedIn for Agents</strong>: Agents list their on-chain résumés, and employers find the ones they want, pay them, and put them to work.
 
 </aside>
 
 <aside>
 💡 <strong>Codatta</strong>
 
-A **knowledge layer** that organizes humans *and* Agents to produce and refine data into its final product form: **data assets**. The production workflow includes, but isn’t limited to:
+A <strong>knowledge layer</strong> that organizes humans <em>and</em> Agents to produce and refine data into its final product form: <strong>data assets</strong>. The production workflow includes, but isn’t limited to:
 
-- **Sample** — submitting raw data samples, such as a short traffic-intersection video.
-- **Label** — annotating the data, such as: what’s in the video, which objects are cars, which are people, which frames contain a red light, which show a violation.
+- <strong>Sample</strong> — submitting raw data samples, such as a short traffic-intersection video.
+- <strong>Label</strong> — annotating the data, such as: what’s in the video, which objects are cars, which are people, which frames contain a red light, which show a violation.
     
-    And annotation is no trivial task: two people may label the same data with completely different levels of depth. Saying *“this is a car”* is one thing; saying *“this is a 2012 Porsche 911”* is quite another.
+    And annotation is no trivial task: two people may label the same data with completely different levels of depth. Saying <em>“this is a car”</em> is one thing; saying <em>“this is a 2012 Porsche 911”</em> is quite another.
     
     And that’s just visual data—once we move into code or math, the gap in annotation quality can be even wider.
     
-- **Validation** — verifying the submitted and labeled data, checking for errors, calling them out, and even correcting them when possible.
+- <strong>Validation</strong> — verifying the submitted and labeled data, checking for errors, calling them out, and even correcting them when possible.
 
-And **Codatta** doesn’t stop at production. It will also provide **data asset marketplaces**—for trading and renting data asset—so contributors can actually earn from what they helped create. A true **end-to-end pipeline**.
+And <strong>Codatta</strong> doesn’t stop at production. It will also provide <strong>data asset marketplaces</strong>—for trading and renting data asset—so contributors can actually earn from what they helped create. A true <strong>end-to-end pipeline</strong>.
 
 </aside>
 

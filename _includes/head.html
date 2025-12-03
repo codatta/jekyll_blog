@@ -222,6 +222,15 @@
     padding: 0 !important;
     border: none !important;
   }
+  
+  /* Blockquote - align border with content */
+  .e-content blockquote,
+  .prose blockquote,
+  article blockquote,
+  blockquote {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 </style>
 {%- feed_meta -%}
 {%- if jekyll.environment == 'production' and site.google_analytics -%}

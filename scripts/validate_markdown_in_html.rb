@@ -24,15 +24,23 @@ def find_html_blocks(content)
   HTML_BLOCK_TAGS.each do |tag|
     # Match opening and closing tags, capturing content
     pattern = /<#{tag}[^>]*>([\s\S]*?)<\/#{tag}>/i
-    content.scan(pattern) do |match|
+    # Use StringScanner or match_data to get accurate positions
+    offset = 0
+    while match_data = content[offset..-1]&.match(pattern)
+      full_match = match_data[0]
+      position = offset + match_data.begin(0)
       blocks << {
         tag: tag,
-        content: match[0],
-        full_match: $&
+        content: match_data[1],
+        full_match: full_match,
+        position: position
       }
+      # Move offset past this match to find next occurrence
+      offset = position + full_match.length
     end
   end
-  blocks
+  # Sort by position to process from end to beginning (for auto-fix)
+  blocks.sort_by { |b| b[:position] || 0 }
 end
 
 def has_unprocessed_markdown?(content)
@@ -58,15 +66,33 @@ def process_file(file_path, auto_fix = false)
   # Find all HTML blocks
   html_blocks = find_html_blocks(content)
   
-  html_blocks.each do |block|
+  # Process blocks in reverse order (from end to beginning) when auto-fixing
+  # This ensures that earlier replacements don't affect positions of later blocks
+  blocks_to_process = auto_fix ? html_blocks.reverse : html_blocks
+  
+  blocks_to_process.each do |block|
     if has_unprocessed_markdown?(block[:content])
-      line_number = original_content[0..original_content.index(block[:full_match])].count("\n") + 1
+      # Calculate line number using original_content and position
+      position = block[:position]
+      if position.nil?
+        # Fallback: try to find in original_content
+        position = original_content.index(block[:full_match])
+      end
+      
+      if position.nil?
+        # If still not found, skip this block (shouldn't happen, but be safe)
+        errors << "Could not locate <#{block[:tag]}> block in #{File.basename(file_path)}"
+        next
+      end
+      
+      line_number = original_content[0..position].count("\n") + 1
       
       if auto_fix
         # Auto-fix: replace the content with processed markdown
         fixed_content = fix_markdown_in_html(block[:content])
         fixed_block = block[:full_match].gsub(block[:content], fixed_content)
-        content = content.gsub(block[:full_match], fixed_block)
+        # Use position-based replacement to ensure we replace the correct occurrence
+        content[position, block[:full_match].length] = fixed_block
         warnings << "Fixed markdown in <#{block[:tag]}> at line #{line_number} in #{File.basename(file_path)}"
       else
         errors << "Unprocessed markdown found in <#{block[:tag]}> at line #{line_number} in #{File.basename(file_path)}"
