@@ -67,12 +67,12 @@ layout: default
     {% endif %}
 
     <!-- Content -->
-    <div class="max-w-[680px] mx-auto px-6">
+    <div class="max-w-[700px] mx-auto px-6">
          <div class="e-content
             prose prose-lg prose-stone max-w-none
             
             /* Headings */
-            [&_h2]:text-3xl md:[&_h2]:text-[2rem] [&_h2]:leading-tight [&_h2]:tracking-tight [&_h2]:text-black [&_h2]:mt-12 md:[&_h2]:mt-16
+            [&_h2]:text-3xl md:[&_h2]:text-[2rem] [&_h2]:leading-tight [&_h2]:tracking-tight [&_h2]:text-black [&_h2]:mt-6 md:[&_h2]:mt-8 [&_h2]:mb-4 md:[&_h2]:mb-5
             [&_h3]:text-xl md:[&_h3]:text-2xl [&_h3]:mt-8 md:[&_h3]:mt-12 [&_h3]:font-medium [&_h3]:text-black
             
             /* Lead Paragraph (The Mercor/Editorial Style) */
@@ -80,18 +80,18 @@ layout: default
             [&>p:first-of-type]:leading-[1.6] 
             [&>p:first-of-type]:text-gray-800 
             [&>p:first-of-type]:font-serif 
-            [&>p:first-of-type]:mb-8 md:[&>p:first-of-type]:mb-12
+            [&>p:first-of-type]:mb-4 md:[&>p:first-of-type]:mb-5
             
             /* Standard Paragraphs */
             [&_p]:font-sans 
             [&_p]:text-base md:[&_p]:text-[1.125rem] 
             [&_p]:text-[#222] 
             [&_p]:leading-[1.7] md:[&_p]:leading-[1.8] 
-            [&_p]:mb-6 md:[&_p]:mb-8
+            [&_p]:mb-4 md:[&_p]:mb-5
             
             /* Blockquotes */
             [&_blockquote]:pl-6 md:[&_blockquote]:pl-8 
-            [&_blockquote]:py-2 
+            [&_blockquote]:py-0 
             [&_blockquote]:my-8 md:[&_blockquote]:my-12
             [&_blockquote]:text-xl md:[&_blockquote]:text-2xl 
             [&_blockquote]:leading-normal 
@@ -109,6 +109,41 @@ layout: default
             [&_li]:text-base md:[&_li]:text-[1.125rem] 
             [&_li]:text-[#222] 
             [&_li]:marker:text-gray-300
+            
+            /* Inline code - override prose styles */
+            [&_code]:!bg-gray-100
+            [&_code]:!px-1.5
+            [&_code]:!py-0.5
+            [&_code]:!rounded
+            [&_code]:!text-sm
+            [&_code]:!font-mono
+            [&_code]:!text-gray-800
+            [&_code]:!border
+            [&_code]:!border-gray-200
+            [&_code:not(pre_code)]:!inline
+            
+            /* Aside blocks - reduced spacing, top and bottom padding are equal */
+            [&_aside]:!mt-1 md:[&_aside]:!mt-1.5
+            [&_aside]:!mb-1.5 md:[&_aside]:!mb-2
+            [&_aside]:!py-4 md:[&_aside]:!py-5
+            [&_aside]:px-6 md:[&_aside]:px-6
+            [&_aside]:bg-gray-50
+            [&_aside]:border-l-4
+            [&_aside]:border-gray-300
+            [&_aside]:rounded-r-sm
+            [&_aside]:text-base md:[&_aside]:text-[1.125rem]
+            [&_aside]:leading-relaxed
+            [&_aside]:font-sans
+            [&_aside]:text-[#222]
+            [&_aside_strong]:font-semibold
+            [&_aside_strong]:text-black
+            [&_aside_em]:italic
+            [&_aside_p]:!mt-0 [&_aside_p]:!mb-1.5 md:[&_aside_p]:!mb-2
+            [&_aside_ul]:!mt-1.5 md:[&_aside_ul]:!mt-2
+            [&_aside_ul]:!mb-1.5 md:[&_aside_ul]:!mb-2
+            [&_aside_ul]:space-y-1
+            [&_aside_li]:ml-4
+            [&_aside_li]:!my-1 md:[&_aside_li]:!my-1.5
          " itemprop="articleBody">
             {{ content }}
          </div>
