@@ -1,10 +1,10 @@
 codatta_team:
   name: Codatta Team
   bio: "The team behind Codatta, the knowledge layer for AI."
-  avatar: /assets/images/codatta-logo.png
+  avatar: /assets/avatar/codatta-logo.png
   twitter: codatta_io
   github: codatta
-  linkedin: codetta-io
+  linkedin: codatta-io
 
 yi_zhang:
   name: Yi Zhang
