@@ -2,7 +2,7 @@
 layout: post
 title:  "ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer"
 date:   2025-11-29 13:00:00 +0800
-categories: [Other]
+categories: [Blockchain]
 author: Jason C
 status: opinion
 tags: [Web3, AI, ERC-8004]
