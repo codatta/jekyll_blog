@@ -5,7 +5,7 @@ date:   2025-12-09 09:00:00 +0800
 categories: ["Ecosystem & Community"]
 author: codatta_team
 status: announcement
-image: /assets/ecosystem-community/codatta-chainlink-ccip.jpeg
+image: 
 excerpt: "Codatta has integrated Chainlink CCIP to enable secure, reliable, and native cross-chain transfers of XNY across Base and BNB Chain, marking a key milestone in Codatta's multi-chain expansion." 
 ---
 

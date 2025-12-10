@@ -28,7 +28,7 @@ layout: default
             class="post-item group cursor-pointer py-12 border-b border-gray-100 first:pt-0 last:border-0"
             data-categories="{{ post_cats_str }}"
         >
-           <a href="{{ post.url | relative_url }}" class="block hover:opacity-80 transition-opacity no-underline hover:!no-underline">
+           <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | relative_url }}{% endif %}" {% if post.external_url %}target="_blank" rel="noopener noreferrer"{% endif %} class="block hover:opacity-80 transition-opacity no-underline hover:!no-underline">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 
                 <!-- Content Side -->
