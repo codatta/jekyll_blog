@@ -430,13 +430,13 @@ And this is where ERC-8004’s openness becomes incredibly useful.
 
 We have two places where these fields can live:
 
-- 1. The JSON file referenced by the `URI` field
+1. The JSON file referenced by the `URI` field
     
-    This is stored off-chain and retrieved/parsed via the URI.
+This is stored off-chain and retrieved/parsed via the URI.
     
-- **2.** The reserved `metadata` field
+2. The reserved `metadata` field
     
-    This is stored directly on-chain and can be parsed from the block data.
+This is stored directly on-chain and can be parsed from the block data.
     
 
 In short: anything without a predefined “seat” in the `Identity Registry` can still be accommodated — you just have to choose whether it belongs on-chain or off-chain.
@@ -447,7 +447,7 @@ Storing the data in the off-chain JSON file referenced by the `URI` field comes 
 
 For example, these fields could be recorded like this:
 
-```latex
+```json
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "name": "annotator",
