@@ -1,3 +1,14 @@
+---
+layout: post
+title:  "ERC-8004 × Codatta: The Reconstruction Episode — I Became You When I Grew Up"
+date:   2025-12-14 13:00:00 +0800
+categories: [Blockchain]
+author: jason404
+status: opinion
+tags: [Web3, AI, ERC-8004]
+excerpt: "Reconstruction is the first approach to integrating Codatta with ERC-8004, which is rebuilding the Codatta DID using the ERC-8004 standard"
+---
+
 # **Reborn as the Lord of** `ERC-8004`
 
 Rebirth, time-travel, and domineering CEOs have been blockbuster genres in recent years, practically making people unable to stop reading. After consuming **so many power-fantasy novels that the usual stuff no longer does it for me.** 
@@ -447,7 +458,7 @@ Storing the data in the off-chain JSON file referenced by the `URI` field comes 
 
 For example, these fields could be recorded like this:
 
-```json
+```yaml
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "name": "annotator",
