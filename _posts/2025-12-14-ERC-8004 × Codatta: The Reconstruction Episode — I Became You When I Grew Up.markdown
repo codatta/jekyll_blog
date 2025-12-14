@@ -36,8 +36,9 @@ We’ll dive deeper into the side effects later. For now, compared with the gain
 
 **Back to the main thread. As mentioned in the previous article, “reconstruction” simply means rebuilding the Codatta DID using the ERC-8004 standard—that is, representing the Codatta DID within the EVM ecosystem in the data schema defined by ERC-8004.**
 
-If you’ve forgotten what ERC-8004 or the Codatta DID actually are, feel free to revisit the earlier articles:
-[ERC-8004: MCP on Ethereum](https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4 "ERC-8004: MCP on Ethereum")
+If you’ve forgotten what ERC-8004 or the Codatta DID actually are, feel free to revisit the earlier articles:<br />
+[ERC-8004: MCP on Ethereum](https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4 "ERC-8004: MCP on Ethereum")  
+
 [ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer](https://medium.com/@hopeoftown/erc-8004-codatta-three-paths-toward-the-knowledge-layer-23053f1edf42
  "ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer")
 
@@ -409,7 +410,7 @@ The only difference is that `id` is a **global** identifier, while `agentId` is 
 
 P.S. In `Identity Registry`, the global identifier is formed by combining `namespace`, `chainId`, `identityRegistry`, and `agentId`.
 
-If you need a refresher, see the earlier article:  https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4
+If you need a refresher, see the earlier article:  [ERC-8004: MCP on Ethereum](https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4 "ERC-8004: MCP on Ethereum")
 
 But this distinction isn’t what matters here.
 
