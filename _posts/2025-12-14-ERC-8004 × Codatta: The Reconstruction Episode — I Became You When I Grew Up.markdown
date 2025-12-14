@@ -2,8 +2,7 @@
 
 Rebirth, time-travel, and domineering CEOs have been blockbuster genres in recent years, practically making people unable to stop reading. After consuming **so many power-fantasy novels that the usual stuff no longer does it for me.** 
 
-To get an even stronger fix, one can only create something oneself. Writing a masterpiece that mixes all these elements into one ultimate 
-****story—just thinking about it is exciting. 
+To get an even stronger fix, one can only create something oneself. Writing a masterpiece that mixes all these elements into one ultimate story—just thinking about it is exciting. 
 
 I even thought of the name: **“Codatta: Reborn as the Lord of `ERC-8004`.”**
 
@@ -38,10 +37,9 @@ We’ll dive deeper into the side effects later. For now, compared with the gain
 **Back to the main thread. As mentioned in the previous article, “reconstruction” simply means rebuilding the Codatta DID using the ERC-8004 standard—that is, representing the Codatta DID within the EVM ecosystem in the data schema defined by ERC-8004.**
 
 If you’ve forgotten what ERC-8004 or the Codatta DID actually are, feel free to revisit the earlier articles:
-
-https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4
-
-https://medium.com/@hopeoftown/erc-8004-codatta-three-paths-toward-the-knowledge-layer-23053f1edf42
+[ERC-8004: MCP on Ethereum](https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4 "ERC-8004: MCP on Ethereum")
+[ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer](https://medium.com/@hopeoftown/erc-8004-codatta-three-paths-toward-the-knowledge-layer-23053f1edf42
+ "ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer")
 
 It’s worth noting that **Codatta DID** here is used as a representative term referring to a range of information related to Codatta’s users. In fact, because `ERC-8004` as a resume template is designed quite comprehensively, beyond the static user information recorded in the narrowly defined **Codatta DID** itself, certain dynamic information can also be incorporated into the `ERC-8004` framework — though this is by no means required.
 
