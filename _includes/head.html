@@ -241,6 +241,32 @@
     margin-bottom: 1.5rem !important;
   }
   
+  /* Target Rouge's highlight container - this is the main wrapper Rouge uses */
+  .e-content pre .highlight,
+  .prose pre .highlight,
+  article pre .highlight,
+  pre .highlight,
+  .e-content .highlight,
+  .prose .highlight,
+  article .highlight,
+  .highlight {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
+  /* Remove background from all elements inside highlight container */
+  .e-content pre .highlight *,
+  .prose pre .highlight *,
+  article pre .highlight *,
+  pre .highlight *,
+  .e-content .highlight *,
+  .prose .highlight *,
+  article .highlight *,
+  .highlight * {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
   .e-content pre code,
   .prose pre code,
   article pre code,
@@ -310,6 +336,89 @@
   .prose pre span,
   article pre span,
   pre span {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
+  /* Target Rouge's hll class (highlight line) - often used for line backgrounds */
+  .e-content pre .hll,
+  .prose pre .hll,
+  article pre .hll,
+  pre .hll,
+  .e-content pre code .hll,
+  .prose pre code .hll,
+  article pre code .hll,
+  pre code .hll,
+  .e-content .highlight .hll,
+  .prose .highlight .hll,
+  article .highlight .hll,
+  .highlight .hll {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
+  /* Target all possible Rouge token classes that might have backgrounds */
+  /* These are common Rouge token classes: p (punctuation), k (keyword), n (name), s (string), c (comment), o (operator), etc. */
+  .e-content pre [class*="rouge"],
+  .prose pre [class*="rouge"],
+  article pre [class*="rouge"],
+  pre [class*="rouge"],
+  .e-content pre [class^="p"],
+  .prose pre [class^="p"],
+  article pre [class^="p"],
+  pre [class^="p"],
+  .e-content pre [class^="k"],
+  .prose pre [class^="k"],
+  article pre [class^="k"],
+  pre [class^="k"],
+  .e-content pre [class^="n"],
+  .prose pre [class^="n"],
+  article pre [class^="n"],
+  pre [class^="n"],
+  .e-content pre [class^="s"],
+  .prose pre [class^="s"],
+  article pre [class^="s"],
+  pre [class^="s"],
+  .e-content pre [class^="c"],
+  .prose pre [class^="c"],
+  article pre [class^="c"],
+  pre [class^="c"],
+  .e-content pre [class^="o"],
+  .prose pre [class^="o"],
+  article pre [class^="o"],
+  pre [class^="o"],
+  .e-content pre [class^="nb"],
+  .prose pre [class^="nb"],
+  article pre [class^="nb"],
+  pre [class^="nb"],
+  .e-content pre [class^="nc"],
+  .prose pre [class^="nc"],
+  article pre [class^="nc"],
+  pre [class^="nc"],
+  .e-content pre [class^="nd"],
+  .prose pre [class^="nd"],
+  article pre [class^="nd"],
+  pre [class^="nd"],
+  .e-content pre [class^="ni"],
+  .prose pre [class^="ni"],
+  article pre [class^="ni"],
+  pre [class^="ni"],
+  .e-content pre [class^="nl"],
+  .prose pre [class^="nl"],
+  article pre [class^="nl"],
+  pre [class^="nl"],
+  .e-content pre [class^="nn"],
+  .prose pre [class^="nn"],
+  article pre [class^="nn"],
+  pre [class^="nn"],
+  .e-content pre [class^="nt"],
+  .prose pre [class^="nt"],
+  article pre [class^="nt"],
+  pre [class^="nt"],
+  .e-content pre [class^="nv"],
+  .prose pre [class^="nv"],
+  article pre [class^="nv"],
+  pre [class^="nv"] {
     background-color: transparent !important;
     background: none !important;
   }
