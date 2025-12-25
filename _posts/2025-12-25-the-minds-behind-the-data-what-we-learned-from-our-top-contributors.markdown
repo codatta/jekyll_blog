@@ -11,24 +11,16 @@ excerpt: "Through in-depth interviews with eight top contributors, we gained qua
 
 To refine the evolution of the Codatta ecosystem, we invited eight of our top airdrop contributors via email and held in-depth audio interviews with each participant. These interviews provided qualitative insights into contributor motivations, behaviors, and expectations. This cohort represents a global cross-section of high-level talent, including computer science researchers, legal consultants, and specialized PhDs in fields such as entomology.
 
-{::nomarkdown}
-<div class="overflow-x-auto -mx-6 px-6 my-2 md:my-3">
-{:/nomarkdown}
-
 | Interviewee | Contact | Interview Duration | Occupation / Role |
 |-------------|---------|-------------------|-------------------|
-| 1 | una***@qq.com | 27 minutes | Undergraduate Computer Science Student |
-| 2 | lqx***@outlook.com | 25 minutes | Sales Professional |
-| 3 | onl***@gmail.com | 48 minutes | Independent Worker & Content Creator |
-| 4 | aza***@gmail.com | 16 minutes | Computer Science Graduate |
-| 5 | sem***@gmail.com | 20 minutes | Blockchain Expert / Consultant; Lawyer |
-| 6 | fri***@yahoo.com | 20 minutes | Technology Official; PhD in Agricultural Entomology |
-| 7 | liu***@gmail.com | 22 minutes | Computer Development & Operations Engineer |
-| 8 | 978***@qq.com | 31 minutes | Graduate Student |
-
-{::nomarkdown}
-</div>
-{:/nomarkdown}
+| 1 | unaxxx@qq.com | 27 minutes | Undergraduate Computer Science Student |
+| 2 | lqxxxx@outlook.com | 25 minutes | Sales Professional |
+| 3 | onlxxx@gmail.com | 48 minutes | Independent Worker & Content Creator |
+| 4 | azaxxx@gmail.com | 16 minutes | Computer Science Graduate |
+| 5 | semxxx@gmail.com | 20 minutes | Blockchain Expert / Consultant; Lawyer |
+| 6 | frixxx@yahoo.com | 20 minutes | Technology Official; PhD in Agricultural Entomology |
+| 7 | liuxxx@gmail.com | 22 minutes | Computer Development & Operations Engineer |
+| 8 | 978xxx@qq.com | 31 minutes | Graduate Student |
 
 ## The Value of Domain-Specific Intelligence
 
