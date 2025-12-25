@@ -9,13 +9,13 @@ tags: [Web3, AI, ERC-8004]
 excerpt: "Reconstruction is the first approach to integrating Codatta with ERC-8004, which is rebuilding the Codatta DID using the ERC-8004 standard"
 ---
 
-# **Reborn as the Lord of** `ERC-8004`
+## **Reborn as the Lord of ERC-8004**
 
 Rebirth, time-travel, and domineering CEOs have been blockbuster genres in recent years, practically making people unable to stop reading. After consuming **so many power-fantasy novels that the usual stuff no longer does it for me.** 
 
 To get an even stronger fix, one can only create something oneself. Writing a masterpiece that mixes all these elements into one ultimate story—just thinking about it is exciting. 
 
-I even thought of the name: **“Codatta: Reborn as the Lord of `ERC-8004`.”**
+I even thought of the name: **“Codatta: Reborn as the Lord of ERC-8004.”**
 
 Sorry, some readers may be disappointed—
 
@@ -29,7 +29,7 @@ And the main storyline?
 
 It’s about placing a mature soul into a brand-new body, then rise to dominate the whole realm.
 
-—aka: **the Steps for Reconstructing the Codatta DID using `ERC-8004`…**
+—aka: **the Steps for Reconstructing the Codatta DID using ERC-8004…**
 
 **Reconstruction is the first approach to integrating Codatta with ERC-8004.**
 
@@ -48,14 +48,14 @@ We’ll dive deeper into the side effects later. For now, compared with the gain
 **Back to the main thread. As mentioned in the previous article, “reconstruction” simply means rebuilding the Codatta DID using the ERC-8004 standard—that is, representing the Codatta DID within the EVM ecosystem in the data schema defined by ERC-8004.**
 
 If you’ve forgotten what ERC-8004 or the Codatta DID actually are, feel free to revisit the earlier articles:<br />
-[ERC-8004: MCP on Ethereum](https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4 "ERC-8004: MCP on Ethereum")  
 
-[ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer](https://medium.com/@hopeoftown/erc-8004-codatta-three-paths-toward-the-knowledge-layer-23053f1edf42
+- [ERC-8004: MCP on Ethereum](https://medium.com/@hopeoftown/erc-8004-mcp-on-ethereum-b42003be3fa4 "ERC-8004: MCP on Ethereum")  
+- [ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer](https://medium.com/@hopeoftown/erc-8004-codatta-three-paths-toward-the-knowledge-layer-23053f1edf42
  "ERC-8004 & Codatta: Three Paths Toward the Knowledge Layer")
 
 It’s worth noting that **Codatta DID** here is used as a representative term referring to a range of information related to Codatta’s users. In fact, because `ERC-8004` as a resume template is designed quite comprehensively, beyond the static user information recorded in the narrowly defined **Codatta DID** itself, certain dynamic information can also be incorporated into the `ERC-8004` framework — though this is by no means required.
 
-# It's the match-3 game, Stupid
+## It's the match-3 game, Stupid
 
 To design a reconstruction scheme, the first thing you must learn is this — don’t be afraid, I’m not telling you to read the *Design Patterns Explained* or the *Database Systems Concepts*.
 
@@ -85,9 +85,9 @@ Using the `ERC-8004`  to carry out the reconstruction of **Codatta** essentially
 
 **apply the same sharp instincts you use in a match-3 game — keep identifying their commonalities and merge them together.**
 
-let’s start with `ERC-8004`.
+let’s start with ERC-8004.
 
-`ERC-8004` defines three main modules: the `Identity Registry`, the `Reputation Registry`, and the `Validation Registry`.
+ERC-8004 defines three main modules: the `Identity Registry`, the `Reputation Registry`, and the `Validation Registry`.
 
 Don’t let the grand names intimidate you — you’ll soon realize these modules are extremely basic and universal. Most real-world business systems rely on these same three components.
 
@@ -142,7 +142,7 @@ The content itself must meet a certain level of quality before it can be conside
 
 **Discovery** is the starting point, **understanding** is the process, **interaction** is the mechanism — and **mutual benefit is the ultimate goal.**
 
-## Step 1: Divide into three
+### Step 1: Divide into three
 
 **In the Codatta ecosystem, what is the ultimate goal?**
 
@@ -178,9 +178,9 @@ To achieve this goal, **Codatta** has built a **three-layer interaction framewor
     
 - **The third layer** is **Codatta** **Data Production** system, which, similarly, is maintained by the **Codatta** platform currently and also consists of *dynamic* information.
 
-## Step 2: Similarities and Differences
+### Step 2: Similarities and Differences
 
-### Codatta DID & `Identity Registry`
+#### Codatta DID & Identity Registry
 
 The **Codatta DID** and the `Identity Registry` in `ERC-8004` are, in both functional positioning and practical usage, strikingly similar.
 
@@ -188,7 +188,7 @@ Most of the content can be migrated almost directly.
 
 The main consideration is how to achieve a clean one-to-one mapping — or, to put it plainly, **which fields in the Codatta DID should be placed where inside the** `Identity Registry`, whether everything fits properly, and whether anything becomes misaligned after the migration, requiring some additional adjustment.
 
-### Codatta Reputation & `Reputation Registry`
+#### Codatta Reputation & Reputation Registry
 
 As for the **Reputation** system and the **data-production** system, I’ve repeatedly emphasized that they are currently maintained by the **Codatta** platform.
 
@@ -280,7 +280,7 @@ This would allow third parties to build their own profiling models tailored to t
 
 By using **Codatta Reputation** scoring as the foundation and adding their own domain-specific perspectives, they can enrich the **Codatta Reputation** ecosystem while maintaining reliability and trustworthiness.
 
-### Codatta Data Production System & `Validation Registry`
+#### Codatta Data Production System & `Validation Registry`
 
 The **Codatta Data Production** System manages the lifecycle through which raw, unstructured data evolves — passing through sample, label, validation, and other processes — into its final product: the **Data Asset**.
 
@@ -334,7 +334,7 @@ Can we eventually abstract and distill repeatable patterns — a playbook of sor
 
 After all, the fact that we can’t do it now doesn’t mean we’ll never be able to.
 
-## Step 3: **Draw the Lines, Clear the Board**
+### Step 3: **Draw the Lines, Clear the Board**
 
 After two rounds of observation, we’ve finally reached the part where we actually start doing things.
 
@@ -365,7 +365,7 @@ Fine. Since everything is a bit of a wild gamble anyway — and since no one rea
 Who knows?
 ****Maybe this rough draft will inspire something far better.
 
-### Handling of Codatta DID
+#### Handling of Codatta DID
 
 Let’s start again with the **Codatta DID**.
 
@@ -441,14 +441,8 @@ And this is where ERC-8004’s openness becomes incredibly useful.
 
 We have two places where these fields can live:
 
-1. The JSON file referenced by the `URI` field
-    
-This is stored off-chain and retrieved/parsed via the URI.
-    
-2. The reserved `metadata` field
-    
-This is stored directly on-chain and can be parsed from the block data.
-    
+- The JSON file referenced by the `URI` field. This is stored off-chain and retrieved/parsed via the URI.
+- The reserved `metadata` field. This is stored directly on-chain and can be parsed from the block data.
 
 In short: anything without a predefined “seat” in the `Identity Registry` can still be accommodated — you just have to choose whether it belongs on-chain or off-chain.
 
@@ -668,7 +662,7 @@ A more sensible approach is to reserve metadata for future extensions — for
 
 the kind of information that doesn’t fit neatly elsewhere and is inconvenient to process, but still benefits from being anchored on-chain.
 
-### Handling of Codatta Reputation
+#### Handling of Codatta Reputation
 
 In the earlier article on `ERC-8004`, we walked through one of its core functions and the parameters it exposes.
 Let’s bring it back into view:
@@ -762,7 +756,7 @@ Who knows.
 If nothing else, this serves as a reminder for **Codatta** itself:
 only by growing strong enough does its reputation system become truly valuable.
 
-### Handling of Codatta Data Production System
+#### Handling of Codatta Data Production System
 
 In `ERC-8004` `Validation Registry`, the original design goal is to reach **multi-party consensus** by combining multiple methods and signals.
 
@@ -829,8 +823,6 @@ Once the review is complete, the validator submits their findings by calling the
 ```latex
 **function** validationResponse(bytes32 requestHash, uint8 response, string responseUri, bytes32 responseHash, bytes32 tag) external
 ```
-
- 
 
 The `response`  is a numerical score ranging from 0 to 100 — as the name suggests, it represents the validator’s assessment of the delivered result.
 
@@ -994,7 +986,7 @@ If Codatta users run into disputes while executing data tasks — whether they a
 
 And frankly, that is precisely why a platform like Codatta needs to exist in the first place.
 
-# **This Is Not the Finish Line**
+## **This Is Not the Finish Line**
 
 At this point, we’ve largely covered how `ERC-8004` can be used to reconstruct **Codatta DID** using its existing building blocks.
 

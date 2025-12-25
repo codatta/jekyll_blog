@@ -57,6 +57,20 @@
                 fontStyle: 'italic',
                 fontWeight: '400',
                 borderLeftColor: '#000',
+                lineHeight: '1.7',
+                fontSize: '1rem',
+                color: '#222',
+                'p:first-of-type::before': {
+                  content: 'none',
+                },
+                'p:last-of-type::after': {
+                  content: 'none',
+                },
+                p: {
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  color: '#222',
+                },
               },
               code: {
                 display: 'inline',
@@ -214,6 +228,19 @@
   }
   
   /* Code blocks (not inline) */
+  .e-content pre,
+  .prose pre,
+  article pre,
+  pre {
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.5rem !important;
+    padding: 1rem !important;
+    overflow-x: auto !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
   .e-content pre code,
   .prose pre code,
   article pre code,
@@ -221,6 +248,70 @@
     background-color: transparent !important;
     padding: 0 !important;
     border: none !important;
+    color: #1f2937 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Remove all backgrounds from code block elements - Rouge may use table or line structures */
+  .e-content pre *,
+  .prose pre *,
+  article pre *,
+  pre * {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
+  /* Specifically target Rouge's table structure (if used) */
+  .e-content pre table,
+  .prose pre table,
+  article pre table,
+  pre table {
+    background-color: transparent !important;
+    border-collapse: collapse !important;
+  }
+  
+  .e-content pre table tr,
+  .prose pre table tr,
+  article pre table tr,
+  pre table tr {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
+  .e-content pre table td,
+  .prose pre table td,
+  article pre table td,
+  pre table td {
+    background-color: transparent !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+  
+  /* Target Rouge's line class if used */
+  .e-content pre .line,
+  .prose pre .line,
+  article pre .line,
+  pre .line,
+  .e-content pre code .line,
+  .prose pre code .line,
+  article pre code .line,
+  pre code .line {
+    background-color: transparent !important;
+    background: none !important;
+  }
+  
+  /* Target any div or span inside pre */
+  .e-content pre div,
+  .prose pre div,
+  article pre div,
+  pre div,
+  .e-content pre span,
+  .prose pre span,
+  article pre span,
+  pre span {
+    background-color: transparent !important;
+    background: none !important;
   }
   
   /* Blockquote - align border with content */
@@ -230,6 +321,25 @@
   blockquote {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+  
+  /* Remove blockquote quotes - Tailwind Typography adds quotes to p:first-of-type and p:last-of-type */
+  .e-content.prose blockquote p:first-of-type::before,
+  .prose.prose-lg blockquote p:first-of-type::before,
+  .prose.prose-stone blockquote p:first-of-type::before,
+  .e-content blockquote p:first-of-type::before,
+  .prose blockquote p:first-of-type::before,
+  article blockquote p:first-of-type::before,
+  blockquote p:first-of-type::before,
+  .e-content.prose blockquote p:last-of-type::after,
+  .prose.prose-lg blockquote p:last-of-type::after,
+  .prose.prose-stone blockquote p:last-of-type::after,
+  .e-content blockquote p:last-of-type::after,
+  .prose blockquote p:last-of-type::after,
+  article blockquote p:last-of-type::after,
+  blockquote p:last-of-type::after {
+    content: none !important;
+    display: none !important;
   }
 </style>
 {%- feed_meta -%}

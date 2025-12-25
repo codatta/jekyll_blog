@@ -15,7 +15,7 @@ Open robotic data has consolidated around three dominant ecosystems—OXE, LeRob
 
 ## The Panorama of Open Data: From Fragmentation to Consolidation
 
-The current state of robot learning datasets on the Hugging Face Hub vividly illustrates the ongoing paradigm shift in embodied intelligence research-from scattered, institution-specific collections toward large-scale, standardized, and community-driven unification. An analysis of the Hub's trending datasets filtered by the keyword "robot" (https://huggingface.co/datasets?sort=trending&search=robot) and related repositories reveals a pronounced Matthew effect: a small number of flagship initiatives have captured the overwhelming majority of attention, downloads, and citations, while hundreds of smaller datasets struggle for visibility.
+The current state of robot learning datasets on the Hugging Face Hub vividly illustrates the ongoing paradigm shift in embodied intelligence research-from scattered, institution-specific collections toward large-scale, standardized, and community-driven unification. An analysis of the Hub's trending datasets filtered by the keyword "[robot](https://huggingface.co/datasets?sort=trending&search=robot)" and related repositories reveals a pronounced Matthew effect: a small number of flagship initiatives have captured the overwhelming majority of attention, downloads, and citations, while hundreds of smaller datasets struggle for visibility.
 
 This consolidation is not accidental; it reflects both technical necessity (the need for scale and standardization to train generalist robot policies) and ecosystem dynamics (the gravitational pull of well-supported, framework-aligned projects).
 

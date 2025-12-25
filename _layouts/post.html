@@ -93,10 +93,13 @@ layout: default
             [&_blockquote]:pl-6 md:[&_blockquote]:pl-8 
             [&_blockquote]:py-0 
             [&_blockquote]:my-8 md:[&_blockquote]:my-12
-            [&_blockquote]:text-xl md:[&_blockquote]:text-2xl 
-            [&_blockquote]:leading-normal 
-            [&_blockquote]:text-black
+            [&_blockquote]:text-base md:[&_blockquote]:text-[1.125rem]
+            [&_blockquote]:leading-[1.7] md:[&_blockquote]:leading-[1.8]
+            [&_blockquote]:text-[#222]
             [&_blockquote]:not-italic
+            [&_blockquote_p]:text-base md:[&_blockquote_p]:text-[1.125rem]
+            [&_blockquote_p]:leading-[1.7] md:[&_blockquote_p]:leading-[1.8]
+            [&_blockquote_p]:text-[#222]
             
             /* Images inside markdown */
             [&_img]:grayscale 
@@ -158,6 +161,7 @@ layout: default
             /* Lists */
             [&_li]:text-base md:[&_li]:text-[1.125rem] 
             [&_li]:text-[#222] 
+            [&_li]:leading-[1.7] md:[&_li]:leading-[1.8]
             [&_li]:marker:text-gray-300
             
             /* Inline code - override prose styles */
@@ -171,6 +175,30 @@ layout: default
             [&_code]:!border
             [&_code]:!border-gray-200
             [&_code:not(pre_code)]:!inline
+            
+            /* Code blocks */
+            [&_pre]:bg-gray-50
+            [&_pre]:border
+            [&_pre]:border-gray-200
+            [&_pre]:rounded-lg
+            [&_pre]:p-4
+            [&_pre]:overflow-x-auto
+            [&_pre]:my-6
+            [&_pre]:md:my-8
+            [&_pre_code]:bg-transparent
+            [&_pre_code]:!text-gray-800
+            [&_pre_code]:!text-sm
+            [&_pre_code]:!font-mono
+            [&_pre_code]:!p-0
+            [&_pre_code]:!border-0
+            [&_pre_code]:!leading-relaxed
+            [&_pre_*]:!bg-transparent
+            [&_pre_table]:!bg-transparent
+            [&_pre_table_tr]:!bg-transparent
+            [&_pre_table_td]:!bg-transparent
+            [&_pre_.line]:!bg-transparent
+            [&_pre_div]:!bg-transparent
+            [&_pre_span]:!bg-transparent
             
             /* Aside blocks - reduced spacing, top and bottom padding are equal */
             [&_aside]:!mt-1 md:[&_aside]:!mt-1.5
