@@ -96,6 +96,7 @@ layout: default
             [&_blockquote]:text-xl md:[&_blockquote]:text-2xl 
             [&_blockquote]:leading-normal 
             [&_blockquote]:text-black
+            [&_blockquote]:not-italic
             
             /* Images inside markdown */
             [&_img]:grayscale 
@@ -123,6 +124,36 @@ layout: default
             [&_figcaption]:max-w-[90%]
             [&_figcaption]:leading-relaxed
             [&_figcaption]:font-sans
+            
+            /* Tables */
+            [&_table]:w-full
+            [&_table]:min-w-full
+            [&_table]:my-2
+            [&_table]:md:my-3
+            [&_table]:border-collapse
+            [&_table]:border
+            [&_table]:border-gray-200
+            [&_table]:table-auto
+            [&_thead]:bg-gray-50
+            [&_th]:px-4
+            [&_th]:py-3
+            [&_th]:text-left
+            [&_th]:font-medium
+            [&_th]:text-sm
+            [&_th]:border-b
+            [&_th]:border-gray-200
+            [&_th]:whitespace-nowrap
+            [&_td]:px-4
+            [&_td]:py-3
+            [&_td]:text-sm
+            [&_td]:border-b
+            [&_td]:border-gray-100
+            [&_tr:last-child_td]:border-b-0
+            [&_table_wrapper]:overflow-x-auto
+            [&_table_wrapper]:-mx-6
+            [&_table_wrapper]:px-6
+            [&_table_wrapper]:my-2
+            [&_table_wrapper]:md:my-3
             
             /* Lists */
             [&_li]:text-base md:[&_li]:text-[1.125rem] 
