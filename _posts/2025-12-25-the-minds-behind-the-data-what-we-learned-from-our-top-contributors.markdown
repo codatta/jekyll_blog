@@ -74,7 +74,7 @@ The future of Codatta involves moving toward a circular data economy where long-
 ### Enhancing Accessibility and Efficiency
 
 - **Mobile-First Integration**: Recognizing the hardware preferences in emerging markets like Nigeria and Pakistan, we are prioritizing a native mobile experience to facilitate seamless, on-the-go contributions.
-- **Submission Streamlining**: We will introduce objective preset options to reduce manual input fatigue while preserving the depth of the data collected. (Check the Data Lineage Design: https://docs.codatta.io/en/products/data-lineage#data-lineage)
+- **Submission Streamlining**: We will introduce objective preset options to reduce manual input fatigue while preserving the depth of the data collected. (Check the [Data Lineage](https://docs.codatta.io/en/products/data-lineage#data-lineage)Design)
 
 ### Redefining the Review Mechanism
 
