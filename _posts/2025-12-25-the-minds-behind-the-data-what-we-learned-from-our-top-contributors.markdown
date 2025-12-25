@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Minds Behind the Data: What We Learned from Our Top Contributors"
-date:   2025-12-25 15:00:00 +0800
+date:   2025-12-25 18:00:00 +0800
 categories: [Ecosystem & Community]
 author: jessie
 status: official
@@ -28,11 +28,24 @@ Data quality is a direct byproduct of the intersection between professional expe
 
 - **Legal Scrutiny**: A legal consultant from Nigeria utilized his specialized knowledge to identify logical fallacies in how Large Language Models (LLMs) interpret complex regulatory frameworks.
 
+{::nomarkdown}
+<figure>
+  <img src="/assets/ecosystem-community/legal.PNG" alt="Legal Scrutiny" />
+</figure>
+{:/nomarkdown}
+
 - **Algorithmic Edge**: A developer in China focused on mathematical serialization—a known "blind spot" for 99% of current AI models—to ensure the data submitted pushed the boundaries of existing capabilities.
+
+{::nomarkdown}
+<figure>
+  <img src="/assets/ecosystem-community/CS researcher.PNG" alt="CS Researcher" />
+  <figcaption>This highlights a critical trend: the most valuable contributors are actively using our platform as a laboratory for testing the frontiers of AI.</figcaption>
+</figure>
+{:/nomarkdown}
 
 ## The Binance Effect and Retention Mechanics
 
-The Binance Booster Campaign functioned as a high-velocity acquisition engine. However, the transition from initial acquisition to long-term retention depends on two specific variables: platform operational fluidity and task transparency.
+The **Binance Booster Campaign** functioned as a high-velocity acquisition engine. However, the transition from initial acquisition to long-term retention depends on two specific variables: platform operational fluidity and task transparency.
 
 Our analysis shows that while financial incentives initiate the user journey, the "smoothness" of the interface and the intellectual entertainment of the tasks sustain it.
 
@@ -50,7 +63,7 @@ Our top contributors have developed sophisticated methodologies that treat AI as
 
 Despite high satisfaction ratings, the interviews exposed critical friction points that we are committed to addressing.
 
-**Transparency in the Review System**: A significant number of users noted a "black box" effect. While they receive performance grades (S, A, or B), the underlying logic for these ratings is often opaque. There is a clear demand for granular feedback to help contributors align their efforts with our quality standards.
+> **Transparency in the Review System**: A significant number of users noted a "black box" effect. While they receive performance grades (S, A, or B), the underlying logic for these ratings is often opaque. There is a clear demand for granular feedback to help contributors align their efforts with our quality standards.
 
 Technical hurdles, specifically regarding social media account integration, served as a primary source of frustration. Furthermore, the cognitive load required for high-level LLM analysis creates a "brain-drain" effect, suggesting that our reward structures need to reflect the intellectual intensity of the work.
 
@@ -66,6 +79,12 @@ The future of Codatta involves moving toward a circular data economy where long-
 ### Redefining the Review Mechanism
 
 - **Immediate Feedback Loops**: We are developing a system to provide real-time explanations for data ratings, allowing contributors to iterate on their quality immediately.
+
+{::nomarkdown}
+<figure>
+  <img src="/assets/ecosystem-community/phd.png" alt="PhD Contributor" />
+</figure>
+{:/nomarkdown}
 
 - **Reputation Quantization**: Our future reputation system will provide a visible, meritocratic path, showing exactly how professional certifications and historical accuracy translate into platform influence.
 
