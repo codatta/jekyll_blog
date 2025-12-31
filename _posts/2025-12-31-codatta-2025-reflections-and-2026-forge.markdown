@@ -12,7 +12,7 @@ excerpt: "Looking back at what we built together in 2025 — and how we plan to 
 ## Codatta 2025: Reflections and 2026 “Forge”
 
 ## Introduction
-In 2025, we laid the groundwork for Codatta after [two years of building](https://docs.codatta.io/en/community/history): we launched $XNY (TGE, Binance Perps Listing) to the market and openly pressure-tested our protocol, all while refining our broader vision. Our primary focus is addressing the accelerating need for **expertise data** in AI—high-signal, verifiable knowledge that models can reliably learn from and enterprises can trust. This sets the stage for 2026: turning distribution into delivery.
+In 2025, we laid the groundwork for Codatta after [two years of building](https://docs.codatta.io/en/community/history): we launched $XNY to the market and openly pressure-tested our protocol, all while refining our broader vision. Our primary focus is addressing the accelerating need for **expertise data** in AI—high-signal, verifiable knowledge that models can reliably learn from and enterprises can trust. This sets the stage for 2026: turning distribution into delivery.
 
 ## Look-back: what we achieved and what’s still unproven
 In 2025, $XNY (Codatta’s native token) entered broad circulation via major exchanges (e.g., [Binance](https://www.binance.com/en/support/announcement/detail/901d960af2134457aa1e9d72ce6e30fd), [Kraken](https://x.com/krakenfx/status/1948488362983067985), [Bybit](https://www.bybit.com/en/price/codatta/), etc.), with special thanks to the [Binance Booster program](https://www.binance.com/en/support/announcement/detail/901d960af2134457aa1e9d72ce6e30fd) (Codatta as the first project), which gave us distribution and attention that most infrastructure projects never get this early.
