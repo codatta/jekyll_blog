@@ -207,7 +207,7 @@ In this v1→v3 evolution:
 
 This is the highest engineering complexity in the scheme: how to distribute data keys without sharing the Knowledge Contributor's private key or re-encrypting data for each user.
 
-![Architecture Diagram](/asset/Kay/Sovereign_Data_Lineage_Architecture_Diagram.png)
+![Architecture Diagram](/assets/Kay/Sovereign_Data_Lineage_Architecture_Diagram.png)
 
 ### Key Management Strategy
 Hybrid encryption:
