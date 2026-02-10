@@ -89,7 +89,7 @@ For a single gas payment request, we can roughly decompose the total gas into tw
 In the pricing model, we can compute the gas consumption for these two parts and then derive the gas a user needs to pay:
 
 $$
-gas\_{user\_pay} = gas\_{user\_specific} + gas\_{shared\_share}
+UserGasToPay = UserSpecificGas + UserShareOfSharedGas
 $$
 
 In the estimation phase, we can compute the user-specific gas fairly accurately, but the user’s share of shared gas depends on how many other transactions share the batch, so we cannot estimate it exactly. However, we can compute an upper bound on the shared gas per user: when no other transactions share the batch, the user bears the full shared gas. This gives an upper bound on the total gas a user might need to pay. To reduce failures caused by price volatility, we can add a safety margin to the estimated gas at this stage, which improves robustness against price swings.
@@ -97,12 +97,12 @@ In the estimation phase, we can compute the user-specific gas fairly accurately,
 During execution, the gas available to the user is:
 
 $$
-available\_gas = \frac{\text{user\_{paid\_XNY}}}{gas\_{price\_by\_XNY}}
+AvailableGas = \frac{\text{UserPaidXNY}}{GasPriceByXNY}
 $$
 
-- `gas_price_by_XNY` is the gas price denominated in $XNY.
+- `GasPriceByXNY` is the gas price denominated in $XNY.
 
-If `gas_price_by_XNY` is unchanged between the user paying and the transaction executing, then the user’s $XNY payment is sufficient to cover the gas cost. The system settles based on the actual gas consumed; any leftover $XNY is refunded to the user.
+If `GasPriceByXNY` is unchanged between the user paying and the transaction executing, then the user’s $XNY payment is sufficient to cover the gas cost. The system settles based on the actual gas consumed; any leftover $XNY is refunded to the user.
 
 ### On-Chain AMM-Based Auto-Swap
 
@@ -164,43 +164,43 @@ To handle this, we introduce a **gas price smoothing mechanism**.
 The $XNY amount a user must pay per transaction is:
 
 $$
-\text{estimated\_xny\_amount} = gas \times gas\_price \times ETH\_price / smoothed\_{XNY\_price}
+EstimatedXNYAmount = Gas \times GasPrice \times ETHPrice / SmoothedXNYPrice
 $$
 
 Where:
 - `gas` is the gas amount the user is expected to pay.
-- `gas_price` is the gas price denominated in ETH.
-- `smoothed_XNY_price` is the $XNY price, in units of USDT/$XNY.
-- `ETH_price` is the ETH price, in units of USDT/ETH.
+- `GasPrice` is the gas price denominated in ETH.
+- `ETHPrice` is the ETH price, in units of USDT/ETH.
+- `SmoothedXNYPrice` is the $XNY price, in units of USDT/$XNY.
 
 **Price smoothing (TWAP)**
 
-To reduce fee spikes caused by short-term volatility, the system smooths the $XNY price. The smoothed price `smoothed_XNY_price` is computed via a time-weighted average price (TWAP):
+To reduce fee spikes caused by short-term volatility, the system smooths the $XNY price. The smoothed price `SmoothedXNYPrice` is computed via a time-weighted average price (TWAP):
 
 $$
-smoothed\_{XNY\_price} = \frac{1}{N}\sum_{i=1}^{N} P_i
+SmoothedXNYPrice = \frac{1}{N}\sum_{i=1}^{N} P_i
 $$
 
 This formula takes the average of $XNY prices over a time window.
 
-- `P_i` is the $XNY price at a point in time, in USDT/$XNY.
+- `Pi` is the $XNY price at a point in time, in USDT/$XNY.
 
-With `smoothed_XNY_price`, short-term price swings are averaged out, significantly reducing the probability of transaction failure due to transient volatility.
+With `SmoothedXNYPrice`, short-term price swings are averaged out, significantly reducing the probability of transaction failure due to transient volatility.
 
 ### Gas Buffer Pool
 
-`smoothed_XNY_price` removes the impact of transient volatility on users, but it can cause the paymaster to receive **insufficient $XNY** to cover its real gas costs.
+`SmoothedXNYPrice` removes the impact of transient volatility on users, but it can cause the paymaster to receive **insufficient $XNY** to cover its real gas costs.
 
 For example: suppose when estimating the transaction, the $XNY price is 1 USDT/$XNY, but at execution time, the spot price has dropped to 0.5 USDT/$XNY. The system still uses the smoothed price of 1 USDT/$XNY for fee calculation. As a result, the user’s $XNY payment is **not enough** to cover the actual gas cost. The paymaster should not operate at a loss in this scenario; if we still want the transaction to succeed, we need a mechanism to subsidize the missing gas.
 
 The **gas buffer pool** is designed exactly for this purpose. It complements the price smoothing mechanism: when a user’s $XNY payment is insufficient to cover the actual gas consumed, the buffer pool fills the gap so the transaction can still execute successfully.
 
-However, the buffer pool is not infinite. Each time it subsidizes a transaction, its ETH balance decreases. To avoid draining the pool to zero — which would disable the subsidy mechanism — the system introduces a stabilization mechanism. Once the pool balance drifts away from the target range, the system adjusts the user’s gas multiplier `fee_factor` to pull the pool balance back towards its target.
+However, the buffer pool is not infinite. Each time it subsidizes a transaction, its ETH balance decreases. To avoid draining the pool to zero — which would disable the subsidy mechanism — the system introduces a stabilization mechanism. Once the pool balance drifts away from the target range, the system adjusts the user’s gas multiplier `FeeFactor` to pull the pool balance back towards its target.
 
 **Fee adjustment factor**
 
 $$
-fee\_factor = clamp\Big(k \times \ln\Big(\frac{F_0}{F}\Big), -f\_{max}, f\_{max}\Big)
+FeeFactor = clamp\Big(k \times \ln\Big(\frac{F_0}{F}\Big), -FMax, FMax\Big)
 $$
 
 Where:
@@ -215,15 +215,15 @@ flowchart TD
     
     Pool --> Compare{b_pool below the floor of b_expectation ?}
     
-    Compare -->|Y: short of ETH| Below[fee_factor > 1]
+    Compare -->|Y: short of ETH| Below[FeeFactor > 1]
     
     Compare -->|N: not short of ETH| CheckAbove{above the ceiling of b_expectation?}
     
-    CheckAbove -->|Y: surplus of ETH| Above[fee_factor < 1]
+    CheckAbove -->|Y: surplus of ETH| Above[FeeFactor < 1]
     
-    CheckAbove -->|N: stable| Stable[fee_factor = 1]
+    CheckAbove -->|N: stable| Stable[FeeFactor = 1]
     
-    Gas[gas = estimated_gas * fee_factor]
+    Gas[gas = estimated_gas * FeeFactor]
 
     Below --> Gas
     Above --> Gas
@@ -244,7 +244,7 @@ The four mechanisms above form a complete gas payment solution:
 **User $XNY payment formula**
 
 $$
-xny\_needed = estimated\_{xny\_amount} \times fee\_factor
+XNYNeeded = EstimatedXNYAmount \times FeeFactor
 $$
 
 **End-to-end workflow**:
@@ -265,7 +265,7 @@ These four mechanisms form a closed loop: **gas decomposition ensures fair prici
 
 The figure below shows a simulation of the mechanisms described above:
 
-![twap simulation](../assets/George/gas-payment/twap_simulation.png)
+![twap simulation](../twap_simulation.png)
 
 **Top-left: Token Price — Spot vs TWAP**
 
