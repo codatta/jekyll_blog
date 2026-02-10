@@ -200,7 +200,7 @@ However, the buffer pool is not infinite. Each time it subsidizes a transaction,
 **Fee adjustment factor**
 
 $$
-FeeFactor = clamp\Big(k \times \ln\Big(\frac{F_0}{F}\Big), -FMax, FMax\Big)
+FeeFactor = clamp\Big(k \times \ln\Big(\frac{F_0}{F}\Big), -fmax, fmax\Big)
 $$
 
 Where:
@@ -265,7 +265,7 @@ These four mechanisms form a closed loop: **gas decomposition ensures fair prici
 
 The figure below shows a simulation of the mechanisms described above:
 
-![twap simulation](../twap_simulation.png)
+![twap simulation](../assets/George/gas-payment/twap_simulation.png)
 
 **Top-left: Token Price — Spot vs TWAP**
 
