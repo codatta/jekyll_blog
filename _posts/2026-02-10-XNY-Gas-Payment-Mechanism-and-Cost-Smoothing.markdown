@@ -164,7 +164,7 @@ To handle this, we introduce a **gas price smoothing mechanism**.
 The $XNY amount a user must pay per transaction is:
 
 $$
-estimated\_{xny\_amount} = gas \times gas\_price \times ETH\_price / smoothed\_{XNY\_price}
+\text{estimated\_xny\_amount} = gas \times gas\_price \times ETH\_price / smoothed\_{XNY\_price}
 $$
 
 Where:
