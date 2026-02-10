@@ -88,14 +88,16 @@ For a single gas payment request, we can roughly decompose the total gas into tw
 
 In the pricing model, we can compute the gas consumption for these two parts and then derive the gas a user needs to pay:
 
-User’s gas to pay = user-specific gas + user’s share of shared gas
+$$
+gas\_{user\_pay} = gas\_{user\_specific} + gas\_{shared\_share}
+$$
 
 In the estimation phase, we can compute the user-specific gas fairly accurately, but the user’s share of shared gas depends on how many other transactions share the batch, so we cannot estimate it exactly. However, we can compute an upper bound on the shared gas per user: when no other transactions share the batch, the user bears the full shared gas. This gives an upper bound on the total gas a user might need to pay. To reduce failures caused by price volatility, we can add a safety margin to the estimated gas at this stage, which improves robustness against price swings.
 
 During execution, the gas available to the user is:
 
 $$
-available\_gas = \frac{\text{user\_paid\_XNY}}{gas\_price\_by\_XNY}
+available\_gas = \frac{\text{user\_{paid\_XNY}}}{gas\_{price\_by\_XNY}}
 $$
 
 - `gas_price_by_XNY` is the gas price denominated in $XNY.
@@ -162,7 +164,7 @@ To handle this, we introduce a **gas price smoothing mechanism**.
 The $XNY amount a user must pay per transaction is:
 
 $$
-estimated\_xny\_amount = gas \times gas\_price \times ETH\_price / smoothed\_XNY\_price
+estimated\_{xny\_amount} = gas \times gas\_price \times ETH\_price / smoothed\_{XNY\_price}
 $$
 
 Where:
@@ -176,7 +178,7 @@ Where:
 To reduce fee spikes caused by short-term volatility, the system smooths the $XNY price. The smoothed price `smoothed_XNY_price` is computed via a time-weighted average price (TWAP):
 
 $$
-smoothed\_XNY\_price = \frac{1}{N}\sum_{i=1}^{N} P_i
+smoothed\_{XNY\_price} = \frac{1}{N}\sum_{i=1}^{N} P_i
 $$
 
 This formula takes the average of $XNY prices over a time window.
@@ -242,7 +244,7 @@ The four mechanisms above form a complete gas payment solution:
 **User $XNY payment formula**
 
 $$
-xny\_needed = estimated\_xny\_amount \times fee\_factor
+xny\_needed = estimated\_{xny\_amount} \times fee\_factor
 $$
 
 **End-to-end workflow**:
