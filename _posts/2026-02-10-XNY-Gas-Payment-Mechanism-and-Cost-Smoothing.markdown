@@ -77,22 +77,21 @@ For a single gas payment request, we can roughly decompose the total gas into tw
    uint256 gasUsed = gasBeforeOp - gasAfterOp;
    ```
 
-2. **Shared gas: extra gas to provide the gas payment service**
-   - This part is unrelated to any single user’s business logic and instead pays for keeping the gas payment infrastructure running, such as:
+2. **Base fee: extra gas to provide the gas payment service**
+   - This part is unrelated to any single user's business logic and instead pays for keeping the gas payment infrastructure running, such as:
      - Management logic in the paymaster contract (tracking batches, settlement state, etc.).
-     - Fixed overhead for batched execution and batched settlement.
+     - Fixed overhead for execution and settlement.
      - Extra operations like swaps that convert $XNY to ETH.
    - Characteristics:
-     - This is an “infrastructure cost” rather than a cost that a single user should exclusively bear.
-     - A more reasonable approach is to amortize this cost across all users who use the gas payment service.
+     - This is an "infrastructure cost", not a cost from the user's business logic execution.
 
 In the pricing model, we can compute the gas consumption for these two parts and then derive the gas a user needs to pay:
 
 $$
-UserGasToPay = UserSpecificGas + UserShareOfSharedGas
+UserGasToPay = UserSpecificGas + BaseGas
 $$
 
-In the estimation phase, we can compute the user-specific gas fairly accurately, but the user’s share of shared gas depends on how many other transactions share the batch, so we cannot estimate it exactly. However, we can compute an upper bound on the shared gas per user: when no other transactions share the batch, the user bears the full shared gas. This gives an upper bound on the total gas a user might need to pay. To reduce failures caused by price volatility, we can add a safety margin to the estimated gas at this stage, which improves robustness against price swings.
+In the estimation phase, we can compute the user-specific gas fairly accurately, and the base gas becomes fixed once the contract logic is determined. Therefore, the total gas amount the user needs to pay can be determined. To avoid transaction failures caused by price volatility, we can add a safety margin to the estimated gas at this stage, which improves robustness against price swings.
 
 During execution, the gas available to the user is:
 
@@ -100,9 +99,9 @@ $$
 AvailableGas = \frac{\text{UserPaidXNY}}{GasPriceByXNY}
 $$
 
-- `GasPriceByXNY` is the gas price denominated in $XNY.
+- `gas_price_by_XNY` is the gas price denominated in $XNY.
 
-If `GasPriceByXNY` is unchanged between the user paying and the transaction executing, then the user’s $XNY payment is sufficient to cover the gas cost. The system settles based on the actual gas consumed; any leftover $XNY is refunded to the user.
+If `gas_price_by_XNY` is unchanged between the user paying and the transaction executing, then the user’s $XNY payment is sufficient to cover the gas cost. The system settles based on the actual gas consumed; any leftover $XNY is refunded to the user.
 
 ### On-Chain AMM-Based Auto-Swap
 
@@ -236,7 +235,7 @@ flowchart TD
 
 The four mechanisms above form a complete gas payment solution:
 
-1. **Gas decomposition**: Split total gas into user-specific and shared parts to ensure fair pricing and cost sharing.
+1. **Gas decomposition**: Split total gas into user-specific and base fee parts to ensure fair pricing.
 2. **AMM auto-swap**: Use an on-chain AMM pool to convert $XNY → ETH, eliminating the asset mismatch.
 3. **Price smoothing (TWAP)**: Smooth $XNY price volatility to protect users from short-term price shocks.
 4. **Gas buffer pool + fee adjustment**: Absorb extreme price risk, keep the paymaster at break-even over time, and sustain the service.
@@ -288,8 +287,8 @@ We can see that:
 
 ### Technical Limitations
 
-- **Additional complexity**: Compared to the “user pays their own gas” baseline, this design introduces the paymaster contract, batch execution, and interaction with AMM pools. This increases system complexity and gas consumption.
-  - Mitigation: Batch submission amortizes the shared gas cost across many transactions and significantly reduces per-transaction overhead.
+- **Additional complexity**: Compared to the "user pays their own gas" baseline, this design introduces the paymaster contract, batch execution, and interaction with AMM pools. This increases system complexity and gas consumption.
+  - Mitigation: With the gas buffer pool, we do not need to execute a swap for every transaction, which effectively reduces gas overhead. By batching transactions, all transactions share the base fee, which effectively reduces per-transaction gas consumption.
 - **Latency from batching**: To amortize costs, the bundler tends to wait until it accumulates enough requests before submitting a batch. This introduces a delay between “user signs and submits” and “final on-chain settlement”, forcing a trade-off between real-time execution and cost.
   - Mitigation: The system can configure the batching interval based on network conditions and default to a fixed cycle for all users. It can also offer an “expedited” option for users who want faster execution in exchange for higher fees.
 
