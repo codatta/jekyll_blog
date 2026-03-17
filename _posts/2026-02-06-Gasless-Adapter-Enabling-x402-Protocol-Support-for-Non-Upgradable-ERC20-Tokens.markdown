@@ -106,7 +106,11 @@ As the matrix shows, all four options can technically satisfy x402’s requireme
 
 ## Core Design of the Gasless Adapter
 
-![gasless adapter](../assets/George/x402/gasless%20adapter.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/x402/gasless%20adapter.png" alt="gasless adapter" />
+</figure>
+{:/nomarkdown}
 
 From a design perspective, we want the Gasless Adapter to act as a **capability layer**: it exposes an ERC20 interface (with ERC2612 / ERC3009) upward, and safely proxies all state and operations into the underlying token contract.
 
@@ -154,7 +158,11 @@ We illustrate how the Gasless Adapter works through three typical scenarios.
 **Scenario 1: Regular Transfers**
 
 Transfer  
-![gasless adapter](../assets/George/x402/interact-transfer.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/x402/interact-transfer.png" alt="transfer" />
+</figure>
+{:/nomarkdown}
 
 1. The User calls `approve(Adapter, Amount)` on the Token contract to authorize the Adapter.  
 2. The User calls `transfer(Receiver, Amount)` on the Adapter to transfer tokens to `Receiver`.
@@ -162,7 +170,11 @@ Transfer
 The behavior is equivalent to calling `transfer(Receiver, Amount)` directly on the Token; the Adapter is a transparent proxy.
 
 TransferFrom  
-![gasless adapter](../assets/George/x402/interact-transferfrom.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/x402/interact-transferfrom.png" alt="transferfrom" />
+</figure>
+{:/nomarkdown}
 
 1. The User calls `approve(Adapter, Amount)` on the Token to authorize the Adapter.  
 2. The User calls `approve(Spender, Amount)` on the Adapter to authorize the Spender who will spend on their behalf.  
@@ -172,7 +184,11 @@ Again, the behavior is equivalent to using the Token directly; the Adapter is ju
 
 **Scenario 2: ERC3009 Gasless Transfers**
 
-![gasless adapter](../assets/George/x402/interact-erc3009.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/x402/interact-erc3009.png" alt="erc3009" />
+</figure>
+{:/nomarkdown}
 
 1. The User calls `approve(Adapter, Amount)` on the Token to authorize the Adapter.  
 2. The User signs a `transferWithAuthorization` message.  
@@ -184,7 +200,11 @@ The User does not need to hold ETH; the Relayer pays the gas. This is exactly th
 
 **Scenario 3: x402 Protocol Integration**
 
-![gasless adapter](../assets/George/x402/interact-x402.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/x402/interact-x402.png" alt="x402" />
+</figure>
+{:/nomarkdown}
 
 x402 server configures the **Gasless Adapter** address as the payment token.
 
