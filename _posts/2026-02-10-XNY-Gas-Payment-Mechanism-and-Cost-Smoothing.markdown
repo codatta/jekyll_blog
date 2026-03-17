@@ -263,7 +263,11 @@ These four mechanisms form a closed loop: **gas decomposition ensures fair prici
 
 The figure below shows a simulation of the mechanisms described above:
 
-![twap simulation](../assets/George/gas-payment/twap_simulation.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/gas-payment/twap_simulation.png" alt="twap simulation" />
+</figure>
+{:/nomarkdown}
 
 **Top-left: Token Price — Spot vs TWAP**
 
