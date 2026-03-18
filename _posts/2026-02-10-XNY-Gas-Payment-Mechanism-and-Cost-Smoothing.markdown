@@ -163,14 +163,13 @@ To handle this, we introduce a **gas price smoothing mechanism**.
 The $XNY amount a user must pay per transaction is:
 
 $$
-EstimatedXNYAmount = Gas \times GasPrice \times ETHPrice / SmoothedXNYPrice
+EstimatedXNYAmount = Gas \times GasPrice \times  SmoothedXNYPrice
 $$
 
 Where:
 - `gas` is the gas amount the user is expected to pay.
 - `GasPrice` is the gas price denominated in ETH.
-- `ETHPrice` is the ETH price, in units of USDT/ETH.
-- `SmoothedXNYPrice` is the $XNY price, in units of USDT/$XNY.
+- `SmoothedXNYPrice` is the $XNY price, in units of $XNY/ETH.
 
 **Price smoothing (TWAP)**
 
@@ -182,7 +181,7 @@ $$
 
 This formula takes the average of $XNY prices over a time window.
 
-- `Pi` is the $XNY price at a point in time, in USDT/$XNY.
+- `Pi` is the $XNY price at a point in time, in $XNY/ETH.
 
 With `SmoothedXNYPrice`, short-term price swings are averaged out, significantly reducing the probability of transaction failure due to transient volatility.
 
@@ -190,7 +189,7 @@ With `SmoothedXNYPrice`, short-term price swings are averaged out, significantly
 
 `SmoothedXNYPrice` removes the impact of transient volatility on users, but it can cause the paymaster to receive **insufficient $XNY** to cover its real gas costs.
 
-For example: suppose when estimating the transaction, the $XNY price is 1 USDT/$XNY, but at execution time, the spot price has dropped to 0.5 USDT/$XNY. The system still uses the smoothed price of 1 USDT/$XNY for fee calculation. As a result, the user’s $XNY payment is **not enough** to cover the actual gas cost. The paymaster should not operate at a loss in this scenario; if we still want the transaction to succeed, we need a mechanism to subsidize the missing gas.
+For example: suppose when estimating the transaction, the $XNY price is 1 $XNY/ETH, but at execution time, the spot price has rised to 2 $XNY/ETH. The system still uses the smoothed price of 1 $XNY/ETH for fee calculation. As a result, the user’s $XNY payment is **not enough** to cover the actual gas cost. The paymaster should not operate at a loss in this scenario; if we still want the transaction to succeed, we need a mechanism to subsidize the missing gas.
 
 The **gas buffer pool** is designed exactly for this purpose. It complements the price smoothing mechanism: when a user’s $XNY payment is insufficient to cover the actual gas consumed, the buffer pool fills the gap so the transaction can still execute successfully.
 
@@ -248,7 +247,7 @@ $$
 
 **End-to-end workflow**:
 
-1. **Estimation phase**: The system estimates gas consumption for the user request, fetches the smoothed $XNY price via TWAP, and combines it with the current gas price and ETH price to compute how much $XNY the user should pay. It also calculates the fee adjustment factor based on the buffer pool balance and applies it to the final fee.
+1. **Estimation phase**: The system estimates gas consumption for the user request, fetches the smoothed $XNY/ETH rate via TWAP, and combines it with the current gas price to compute how much $XNY the user should pay. It also calculates the fee adjustment factor based on the buffer pool balance and applies it to the final fee.
 2. **User payment**: The user pays the calculated amount of $XNY and authorizes the transaction.
 3. **Batch execution**: The bundler collects a batch of user requests, submits them on-chain in a batch, and fronts ETH as gas.
 4. **Settlement and risk handling**:
@@ -264,7 +263,11 @@ These four mechanisms form a closed loop: **gas decomposition ensures fair prici
 
 The figure below shows a simulation of the mechanisms described above:
 
-![twap simulation](../assets/George/gas-payment/twap_simulation.png)
+{::nomarkdown}
+<figure>
+  <img src="/assets/George/gas-payment/twap_simulation.png" alt="twap simulation" />
+</figure>
+{:/nomarkdown}
 
 **Top-left: Token Price — Spot vs TWAP**
 
